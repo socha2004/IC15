@@ -1,0 +1,97 @@
+//  Common (styles-m.css)
+//  _____________________________________________
+& when (@media-common =true) {
+
+    .beneficio-wrapper {
+        .flex-center() !important;
+        .lib-css(gap, 10px);
+    }
+
+    .beneficio-linha>div {
+        .lib-css(background-color, #f5f5f5);
+        .lib-css(padding, 20px 60px);
+        .lib-css(border-radius, 10px);
+        .lib-css(margin-bottom, 10px);
+        .lib-css(color, #000);
+        .flex-center();
+        .lib-css(gap, 5px);
+    }
+
+    .categoria-slider-wrapper {
+        .lib-css(display, flex) !important;
+        .lib-css(flex-direction, row) !important;
+        .lib-css(justify-content, center) !important;
+        .lib-css(flex-wrap, wrap);
+        .lib-css(gap, 10px);
+    }
+
+    .categoria-slider-wrapper p {
+        .lib-css(display, flex);
+        .lib-css(flex-direction, column) !important;
+        .lib-css(flex-wrap, wrap) !important;
+        .lib-css(justify-content, center) !important;
+        .lib-css(gap, 10px);
+        .lib-css(color, #000)
+    }
+
+    .caneca-container div {
+        .lib-css(display, flex);
+        .lib-css(flex-direction, column);
+        .lib-css(justify-content, center);
+        .lib-css(align-items, center);
+        .lib-css(color, #000);
+    }
+
+    .oferta-caneca-wrapper {
+        .lib-css(flex-direction, row) !important;
+        .lib-css(gap, 20px);
+        .lib-css(flex-wrap, wrap);
+        .lib-css(justify-content, center) !important;
+    }
+
+    .oferta-homem-wrapper {
+        .flex-center() !important;
+        .lib-css(gap, 10px);
+    }
+
+    .texto-seo-wrapper, .title-category{
+        .lib-css(color, #000)
+    }
+
+    .title-carousel {
+        .lib-css(color, #000);
+        .lib-css(flex-direction, row) !important;
+        .lib-css(justify-content, space-between) !important;
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) { 
+    .beneficio-linha>div {
+        .lib-css(width, 230px);
+        .lib-css(text-align, center);
+    }
+
+    .oculta-mobile {
+        .lib-css(display, none) !important;
+    }
+
+    .categoria-slider-wrapper p {
+        img {
+            .lib-css(width, 108px) !important;
+            .lib-css(height, 108px) !important;
+        }
+    }
+
+    .slider-marcas {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .slider-marcas figure {
+        margin: 0;
+    }
+}

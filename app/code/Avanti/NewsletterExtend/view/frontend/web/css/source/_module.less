@@ -1,0 +1,110 @@
+//
+// Common (styles-m.css)
+// _____________________________________________
+& when (@media-common =true) {
+    .footer-columns-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .block.newsletter .title {
+        .lib-css(display, none) !important;
+        .lib-css(text-align, center);
+    }
+
+    .block.newsletter {
+        .lib-css(max-width, 100%) !important;
+        .lib-css(border-radius, 10px);
+        .lib-css(background-color, #f5f5f5);
+    }
+
+    div.control::before {
+        .lib-css(display, none) !important;
+    }
+
+    .newsletter-privacy {
+        font-size: 12px;
+        .lib-css(color, #656565)
+    }
+
+    form#newsletter-validate-detail {
+        .lib-css(display, flex);
+        .lib-css(justify-content, center);
+        .lib-css(align-items, center);
+        .lib-css(flex-wrap, wrap);
+        .lib-css(gap, 10px);
+        .lib-css(flex, 1);
+        
+        input[type="text"], input[type="email"] {
+            .lib-css(border, none);
+            .lib-css(border-radius, 10px);
+            .lib-css(font-size, 14px);
+            .lib-css(height, 43px);
+        }
+        button{
+            .lib-css(font-size, 16px);
+            .lib-css(height, 43px);
+            .lib-css(border-radius, 10px);
+            .lib-css(text-transform, capitalize);
+            .lib-css(letter-spacing, normal) !important;
+        }
+
+        input#newsletter-privacy {
+            .lib-css(margin, 0)
+        }
+    }
+
+    // BOTAO DE SE INSCREVER
+    .action.subscribe {
+        .lib-css(width, auto) !important;
+    }
+
+    .footer-columns-wrapper {
+        .lib-css(display, flex);
+        .lib-css(justify-content, center);
+        .lib-css(margin, auto);
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+    form#newsletter-validate-detail {
+        input[type="text"], input[type="email"] {
+            .lib-css(width, 280px);
+        }
+    }
+
+     .block.newsletter {
+        .content{
+            .lib-css(padding, 64px);
+        }
+     }
+
+    .block.newsletter .title {
+        .lib-css(margin-bottom, 50px)
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) { 
+    form#newsletter-validate-detail {
+        input[type="text"], input[type="email"], button{
+            .lib-css(width, 310px) !important;
+            .lib-css(margin, 0) !important;
+        }
+        .lib-css(flex-direction, column);
+        .lib-css(align-items,center);
+
+    }
+
+    .block.newsletter {
+        .lib-css(width, 100%);
+        .lib-css(padding, 38px 0)
+     }
+}

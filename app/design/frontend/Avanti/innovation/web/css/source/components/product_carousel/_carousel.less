@@ -1,0 +1,78 @@
+//  Common (styles-m.css)
+//  _____________________________________________
+& when (@media-common =true) {
+    .swatch-attribute-options.clearfix {
+        .lib-css(display, flex);
+        .lib-css(flex-wrap, wrap);
+        .lib-css(justify-content, center);
+    }
+
+    .swatch-option {
+        // .lib-css(border-radius, 100%);
+        .lib-css(border, 1px solid #ccc);
+        .lib-css(height, 18px);
+        .lib-css(width, 18px);
+        .lib-css(gap, 10px);
+    }
+
+    .swatch-option.text,
+    .swatch-option.color {
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        /* centraliza o texto verticalmente */
+        text-align: center;
+        padding: 0;
+    }
+
+    .swatch-option.text:hover,
+    .swatch-option.text.selected,
+    .swatch-option.text:focus,
+    .swatch-option.text:active {
+        border-radius: 50%;
+    }
+
+    .swatch-option.text.selected {
+        border: none !important;
+        background-color: @theme__color__primary !important;
+        .lib-css(color, #fff) !important;
+    }
+
+    .product-item-name,
+    .price-box.price-final_price {
+        .lib-css(text-align, center);
+        .lib-css(font-size, 14px);
+    }
+
+    .action.tocart.primary {
+        .lib-css(text-align, center);
+    }
+
+    .product-item-inner::hover {
+        .lib-css(background-color, gray);
+    }
+
+    .product-item {
+        .lib-css(border-radius, 10px);
+        .lib-css(border, 1px solid #f5f5f5);
+    }
+
+    .product-item-inner {
+        .lib-css(text-align, center);
+        .lib-css(background-color, @theme__color__primary);
+        .lib-css(border-bottom-left-radius, 10px);
+        .lib-css(border-bottom-right-radius, 10px);
+    }
+
+    div.slick-slide {
+        .lib-css(margin-right, 25px);
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
+    button.action.tocart.primary {
+        .lib-css(border-bottom-left-radius, 10px);
+        .lib-css(border-bottom-right-radius, 10px);
+    }
+}

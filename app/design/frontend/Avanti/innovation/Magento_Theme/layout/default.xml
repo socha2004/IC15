@@ -1,0 +1,108 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_file" xsi:type="string">images/logo.svg</argument>
+                <argument name="logo_width" xsi:type="number">159</argument>
+                <argument name="logo_height" xsi:type="number">30</argument>
+                <argument name="logo_alt" xsi:type="string">Pense Avanti</argument>
+            </arguments>
+        </referenceBlock>
+
+        <!-- ADICIONANDO JS NA HEAD DO HTML -->
+        <referenceBlock name="head.additional">
+            <block class="Magento\Framework\View\Element\Template"
+                   name="pagebuilder.slider"
+                   template="Magento_Theme::html/slicker.phtml"/>
+        </referenceBlock>
+
+        <!-- PROMO BLOCK ACIMA DO HEADER -->
+        <referenceContainer name="header.container">
+            <block class="Magento\Framework\View\Element\Template"
+                   name="innovation.promo"
+                   template="Magento_Theme::html/promo.phtml"
+                   before="-">
+            </block>
+        </referenceContainer>
+
+        <!-- AGRUPAMENTO DOS LINKS DE ENTRAR E CRIAR CONTA -->
+        <referenceContainer name="header-wrapper">
+            <container name="header.links.group"
+                as="headerLinksGroup"
+                label="Header Links Group"
+                htmlTag="div"
+                htmlClass="wrapper-links"
+                after="top.search"/>
+        </referenceContainer>
+
+        <!-- MOVE OS LINKS PARA O CONTAINER header.links.group  -->
+        <move element="header.links" destination="header.links.group" before="-"/>
+        <!-- MOVE O CARRINHO PARA DEPOIS DOS LINKS DE ENTRAR E CRIAR CONTA  -->
+        <move element="minicart" destination="header.links.group" after="header.links"/>
+
+        <!-- FOOTER AREA -->
+
+        <!-- remove os links nativos do tema -->
+        <referenceBlock name="footer_links" remove="true"/>
+        <referenceBlock name="copyright" remove="true"/>
+
+        <!-- cria um container dentro do main content para adicionar a newsletter  -->
+        <referenceContainer name="main.content">
+            <container name="footer.newsletter" 
+               label="Footer Columns Wrapper" 
+               htmlTag="div" 
+               htmlClass="footer-columns-wrapper"/>
+        </referenceContainer>
+
+        <!-- move a newsletter para o container criado -->
+        <move element="form.subscribe" destination="footer.newsletter" before="-"/>
+
+        <!-- linha 1-->
+        <referenceContainer name="footer">
+            <container name="footer.rows.wrapper" 
+               label="Footer rows Wrapper" 
+               htmlTag="div" 
+               htmlClass="footer-rows-wrapper">
+
+                <!-- linha 1: bloco CMS -->
+        
+                <block class="Magento\Cms\Block\Block" name="footer_row_1">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer_row_1</argument>
+                    </arguments>
+                </block>     
+
+                <!-- linha 2: Flags Cards -->
+
+                <block class="Magento\Framework\View\Element\Template" name="flag.cards" template="Magento_Theme::html/flags-cards.phtml" after="-" />
+
+                <!-- linha 3: Stamps Partners -->
+
+                <block class="Magento\Framework\View\Element\Template" name="stamps.partners" template="Magento_Theme::html/stamps-partners.phtml" after="flag.cards" />
+            </container>
+        </referenceContainer>
+
+        <!-- Remove link de compare do cabeçalho -->
+        <referenceBlock name="catalog.compare.link" remove="true"/>
+
+
+        <!-- Remove sidebar de compare -->
+        <referenceBlock name="catalog.compare.sidebar" remove="true"/>
+
+
+        <!-- *** ESTE é o da shelf (card de produto) em categoria *** -->
+        <referenceBlock name="category.product.addto.compare" remove="true"/>
+
+
+        <!-- Compare em resultados de busca -->
+        <referenceBlock name="catalogsearch.product.addto.compare" remove="true"/>
+
+
+        <!-- Compare em relacionados / upsell / crosssell / página de produto -->
+        <referenceBlock name="crosssell.product.addto.compare" remove="true"/>
+        <referenceBlock name="related.product.addto.compare" remove="true"/>
+        <referenceBlock name="upsell.product.addto.compare" remove="true"/>
+        <referenceBlock name="view.addto.compare" remove="true"/>
+
+    </body>
+</page>

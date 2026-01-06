@@ -1,0 +1,38 @@
+@media (max-width: 767px) {
+    .footer-accordion h4 {
+        cursor: pointer;
+        position: relative;
+        padding-right: 20px;
+    }
+
+    /* Ícone visual de abrir/fechar */
+    .footer-accordion h4::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        font-weight: bold;
+        margin-right: 10px; 
+
+        width: 12px;   // tamanho da flecha
+        height: 12px;
+
+        background-image: url('@{baseDir}images/footer/arrow.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .footer-accordion.is-open h4::after {
+        background-image: url('@{baseDir}images/footer/arrow.png');
+    }
+
+    /* Esconde o conteúdo por padrão no mobile */
+    .footer-accordion ul {
+        margin-top: 5px;
+    }
+
+    .borda-titulo{
+       .lib-css(border-bottom, 1px solid #cccccc);
+    }
+}

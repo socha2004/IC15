@@ -1,0 +1,155 @@
+//  Common (styles-m.css)
+//  _____________________________________________
+& when (@media-common =true) {
+    body .page-footer {
+        .lib-css(color, #000);
+        .lib-css(padding-bottom, 0);
+    }
+
+    .footer-rows-wrapper>div {
+        .lib-css(width, 100%);
+        .lib-css(max-width, 100%) !important;
+    }
+
+    .social-medias-wrapper {
+        .lib-css(display, flex);
+        .lib-css(margin-top, 40px);
+        .lib-css(align-items, center);
+    }
+
+    
+
+    .payment-methods-wrapper {
+        .lib-css(display, flex);
+        .lib-css(justify-content, center);
+        .lib-css(align-items, center);
+        .lib-css(flex-wrap, wrap);
+        .lib-css(gap, 30px);
+        .lib-css(background-color, #F5F5F5);
+        .lib-css(padding, 64px 0 64px 0);
+
+        // img {
+        //     margin: 0 auto; /* garante centralização individual */
+        //     display: block;
+        // }
+    }
+
+    .stamps-partners-wrapper {
+       .lib-css(background-color, #fff);
+       .lib-css(display, flex);
+       .lib-css(flex-direction, column);
+       .lib-css(align-items, center);
+       .lib-css(max-width, 100%);
+
+       img {
+        .lib-css(padding-bottom, 40px);
+       }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+    div.footer.content {
+        .lib-css(margin-left, 0);
+        .lib-css(margin-right, 0);
+        .lib-css(padding-left, 0);
+        .lib-css(padding-right, 0);
+        .lib-css(width, 100%);
+        .lib-css(max-width, 100%);
+
+        h4 {
+            .lib-css(margin-top, 0);
+        }
+    }
+
+    .footer-row-1 {
+        .lib-css(margin-left, 100px)
+    }
+
+    .footer-row-2 {
+        .lib-css(margin-top, 66px)
+    }
+
+    .social-media-wrapper figure {
+        .lib-css(margin-right, 40px);
+    }
+
+    .text-mobile {
+        display: none;
+    }
+
+    .text-desktop {
+        display: inline;
+        .lib-css(text-align, center);
+        .lib-css(padding, 40px 183px);
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
+    .social-media-wrapper {
+        .lib-css(justify-content, center);
+        .lib-css(gap, 40px)
+    }
+
+    // .payment-methods-wrapper {
+    //     .lib-css(padding-right, 20px);
+    // }
+
+    div.footer.content {
+        .lib-css(padding, 0);
+
+        .logo-footer {
+            .lib-css(margin-top, 40px)
+        }
+
+        h4 {
+            .lib-css(padding, 16px 20px);
+            .lib-css(margin, 0);
+            // .lib-css(border-bottom, 1px solid #cccccc);
+        }
+
+        ul li {
+            .lib-css(padding-left, 20px);
+        }
+    }
+
+    div.footer.content>h4:first-of-type {
+        .lib-css(border-top, 1px solid #cccccc)
+    }
+
+    .institucional-column {
+        .lib-css(border-top, 1px solid #cccccc)
+    }
+
+    .footer-row-1,
+    .footer-row-2 {
+        .lib-css(background-color, #F5F5F5)
+    }
+
+    .footer-row-2 {
+        .lib-css(padding-top, 60px);
+    }
+
+    body div.pagebuilder-column-group {
+        .lib-css(padding-left, 0);
+    }
+
+    figure {
+        .lib-css(text-align, center);
+    }
+
+    .text-mobile {
+        display: inline;
+        .lib-css(text-align, center);
+        .lib-css(padding, 40px 16px);
+    }
+
+    .text-desktop {
+        display: none;
+    }
+}

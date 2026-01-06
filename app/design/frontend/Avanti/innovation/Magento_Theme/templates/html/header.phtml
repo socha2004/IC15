@@ -1,0 +1,68 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+$logoutUrl = $block->getUrl('customer/account/logout');
+?>
+<ul class="header links" data-bind="scope: 'customer'">
+
+    <!-- ko if: customer().fullname -->
+    <li class="greet welcome">
+
+        <img src="<?= $block->getViewFileUrl('images/usuario.svg') ?>"
+             alt="User"
+             class="user-icon-welcome" />
+
+        <span class="logged-in"
+              data-bind="text: 'Bem vindo, ' + customer().fullname + '!'">
+        </span>
+
+    </li>
+    <!-- /ko -->
+
+    <?= $block->getChildHtml() ?>
+</ul>
+<script>
+require(['jquery'], function ($) {
+
+    // Função que oculta os links quando o cliente está logado
+    function hideAuthLinks() {
+        var welcome = $('.customer-welcome').length > 0;
+
+        if (welcome) {
+            // Oculta ENTRAR
+            $('.authorization-link a[href*="customer/account/login"]').hide();
+
+            // Oculta CRIAR CONTA (caso exista esse seletor)
+            $('a[href*="customer/account/create"]').closest('li').hide();
+
+            // Oculta separador "ou"
+            $('.separator-ou').hide();
+
+            return true; // marcou como já tratado
+        }
+
+        return false;
+    }
+
+    require(['domReady!'], function () {
+
+        if (hideAuthLinks()) {
+            return; // já resolveu
+        }
+
+        const observer = new MutationObserver(function () {
+            if (hideAuthLinks()) {
+                observer.disconnect(); // para de observar depois que funcionar
+            }
+        });
+
+        const target = document.querySelector('ul.header.links');
+
+        if (target) {
+            observer.observe(target, {
+                childList: true,
+                subtree: true
+            });
+        }
+    });
+});
+</script>

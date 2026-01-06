@@ -1,0 +1,191 @@
+//  Common (styles-m.css)
+//  _____________________________________________
+& when (@media-common =true) {
+    .innovation-block-container {
+        background-color: #005CFF;
+        height: 30px;
+        margin: 0;
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p {
+            margin: 0;
+            text-align: center;
+
+            .promo-value {
+                background-color: #6220C1;
+                border-radius: 4px;
+            }
+
+            .promo-discount {
+                font-style: italic;
+                font-weight: lighter;
+            }
+        }
+    }
+
+    .panel {
+        display: none;
+    }
+
+    .links li {
+        list-style: none;
+        margin: 0;
+        color: #000 !important;
+    }
+
+    .action.showcart {
+        position: relative; // importante
+        display: inline-block;
+
+        .counter.qty {
+            position: absolute;
+            top: -10px; // ajuste fino
+            right: -22px; // ajuste fino
+            background: @theme__color__primary !important; // ou a cor desejada
+            color: #fff;
+            font-size: 11px;
+            padding: 1px 6px;
+            border-radius: 30px !important;
+            line-height: 1.4;
+            min-width: 10px;
+            text-align: center;
+            font-weight: bold;
+            z-index: 5;
+            margin-bottom: 9px;
+            margin-left: 5px;
+        }
+
+    }
+
+    .customer-welcome .action.switch:after {
+        color: #000 !important;
+    }
+
+    .header.links li a {
+        color: #000 !important;
+    }
+}
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+    .header {
+        display: flex;
+        justify-content: right;
+        gap: 5px;
+        margin: 0;
+        color: #000;
+    }
+
+    .logo {
+        margin: 8px auto 10px 5px;
+    }
+
+    .header.content {
+        padding: 10px 40px;
+    }
+
+    .wrapper-links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .block-search {
+        width: 45%;
+        margin-right: 10%;
+        margin-top: 3px;
+
+        input {
+            border-radius: 10px;
+            color: #000 !important;
+            border-color: #ccc;
+        }
+
+        input::-webkit-input-placeholder {
+            color: #000;
+        }
+    }
+
+    .authorization-link {
+        display: flex;
+        gap: 10px;
+    }
+
+    .separator-ou {
+        margin: 0;
+        color: #000;
+        font-size: 14px;
+    }
+
+    .logged-in {
+        color: #005CFF;
+    }
+
+    .logout-link {
+        color: #000;
+        display: none;
+    }
+
+    li.greet.welcome {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .navigation,
+    .nav-sections {
+        background-color: #fff !important;
+
+        span {
+            color: #000;
+        }
+    }
+
+    .nav-sections {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.10);
+        z-index: 50; // garante que não fique atrás de nada
+        position: relative
+    }
+
+    .navigation .level0.parent>.level-top>.ui-menu-icon {
+        display: none;
+    }
+
+    .navigation ul {
+        padding: 0 8px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .ui-menu li {
+        font-weight: lighter;
+    }
+
+    .ui-menu li:first-child {
+        font-weight: bolder;
+    }
+
+    .navigation .level0:first-child>.level-top {
+        position: relative;
+        padding-left: 25px !important; // espaço para o ícone
+    }
+
+    .navigation .level0:first-child>.level-top::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 16px;
+        height: 16px;
+        transform: translateY(-50%);
+
+        background-image: url('@{baseDir}images/breadcrumb.svg');
+        background-repeat: no-repeat;
+        background-size: 16px auto;
+    }
+
+}

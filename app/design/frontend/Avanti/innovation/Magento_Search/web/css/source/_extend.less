@@ -1,0 +1,51 @@
+.block.block-search {
+    .lib-css(width, 47%);
+    .lib-css(padding, 0);
+
+    #search {
+        .lib-css(border, 1px solid @color-form-border);
+        .lib-css(border-radius, 10px);
+        .lib-css(padding, 20px);
+        .lib-css(height, 38px);
+        .lib-css(box-sizing, border-box);
+    }
+
+    .action.search {
+        .lib-css(height, 100%);
+        .lib-css(width, 30px);
+    }
+
+    .action.search::before{
+        content: '';
+        display: block;
+        width: 80%;
+        height: 80%;
+        background-image: url('@{baseDir}images/lupa.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        color: #000000 !important; 
+    }
+    
+    .label:before {
+        content: '';
+        background-image: url('@{baseDir}images/lupa.svg') !important;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.action.nav-toggle:before {
+    content: '';
+    background-image: url('@{baseDir}images/breadcrumb.svg') !important;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 20px;
+    height: 20px;
+}
+
+

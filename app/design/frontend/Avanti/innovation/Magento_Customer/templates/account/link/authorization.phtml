@@ -1,0 +1,36 @@
+<?php
+/**
+ * @var \Magento\Customer\Block\Account\AuthorizationLink $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+
+$dataPostParam = '';
+
+$isLogged = $block->isLoggedIn();
+
+// Se logado, prepara parâmetros para o link de logout:
+if ($isLogged) {
+    $dataPostParam = sprintf(" data-post='%s'", $block->getPostParams());
+}
+?>
+
+<li class="link authorization-link">
+    <?php if ($isLogged): ?>   
+        <!-- LINK DE SAIR -->
+        <a class="logout-link"
+           <?= /* @noEscape */ $dataPostParam ?>
+           href="<?= $block->getUrl('customer/account/logout') ?>">
+           <?= $escaper->escapeHtml(__('Sair')) ?>
+        </a>
+
+    <?php else: ?>
+        <!-- VISITANTE (não logado) → estrutura original -->
+        <a <?= /* @noEscape */ $block->getLinkAttributes() ?>
+            <?= /* @noEscape */ $dataPostParam ?>>
+            <?= $escaper->escapeHtml($block->getLabel()) ?>
+        </a>
+        <span class="separator-ou">ou</span>
+    <?php endif; ?>
+</li>
+
+
