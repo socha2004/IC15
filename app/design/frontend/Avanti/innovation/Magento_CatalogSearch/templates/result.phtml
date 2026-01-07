@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
@@ -6,6 +7,7 @@
 // @codingStandardsIgnoreFile
 
 use Magento\CatalogSearch\Block\Result;
+
 $searchHelper = $this->helper(\Magento\Search\Helper\Data::class);
 $searchQuery = $searchHelper->getEscapedQueryText();
 /** These changes need to valid applying filters and configuration before search process is started. */
@@ -15,37 +17,36 @@ $productList = $block->getProductListHtml();
 ?>
 <?php if ($block->getResultCount()) : ?>
     <?= /* @noEscape */ $block->getChildHtml('tagged_product_list_rss_link') ?>
-<div class="search results">
-    <?php if ($messages = $block->getNoteMessages()) : ?>
-    <div class="message notice">
-        <div>
-            <?php foreach ($messages as $message) : ?>
-                <?= /* @noEscape */ $message ?><br />
-            <?php endforeach; ?>
-        </div>
+    <div class="search results">
+        <?php if ($messages = $block->getNoteMessages()) : ?>
+            <div class="message notice">
+                <div>
+                    <?php foreach ($messages as $message) : ?>
+                        <?= /* @noEscape */ $message ?><br />
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        <?php endif; ?>
+        <?= /* @noEscape */ $productList ?>
     </div>
-    <?php endif; ?>
-    <?= /* @noEscape */ $productList ?>
-</div>
 <?php else : ?>
 
-<div class="sem-resultado">
-    <div>
-        <span>
-            <?=__("We can't find results for") ?>
-        </span>
-        <span>
-            "<?= $searchQuery ?>"
-        </span>
-        <div class="oque-fazer">
-            <span><?=__("What should I do") ?></span>
-            <ul>
-                <li>- Verifique os termos digitados.</li>
-                <li>- Utilize sinônimos ao termo desejado.</li>
-                <li>- Tente utilizar uma única palavra</li>
-                <li>- Utilize termos genéricos na busca</li>
-            </ul>
+    <div class="sem-resultado">
+        <div>
+            <div class="resultado">
+                <span><?= __("We can't find results for") ?></span>
+                <span class="item-buscado">"<?= $searchQuery ?>"</span>
+            </div>
+            <div class="oque-fazer">
+                <span><?= __("What should I do") ?></span>
+                <ul>
+                    <li>- Verifique os termos digitados.</li>
+                    <li>- Utilize sinônimos ao termo desejado.</li>
+                    <li>- Tente utilizar uma única palavra</li>
+                    <li>- Utilize termos genéricos na busca</li>
+                </ul>
+            </div>
         </div>
     </div>
-</div>
+    <?php echo $this->getLayout() ->createBlock('Magento\Cms\Block\Block') ->setBlockId('slider_notfound') ->toHtml(); ?>
 <?php endif; ?>

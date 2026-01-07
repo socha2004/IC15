@@ -1,14 +1,91 @@
-.column.main .product-item {
-    .lib-css(width, fit-content);
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+    .column.main .product-item {
+        .lib-css(width, fit-content);
+    }
+
+    ol.products.list.items.product-items {
+        .flex-center();
+        .lib-css(gap, 10px);
+    }
+
+    /*OCULTANDO TITULO EM BUSCA SEM RESULTADO*/
+
+    .page-wrapper:has(.sem-resultado) {
+        .page-title-wrapper {
+            .lib-css(display, none);
+        }
+    }
+
+    .oque-fazer {
+        .flex-center();
+
+        span {
+            .lib-css(font-size, 18px);
+            .lib-css(color, #000);
+            .lib-css(font-weight, bold);
+        }
+
+        ul {
+            .lib-css(margin, 0);
+            .lib-css(list-style, none);
+
+            li {
+                .lib-css(color, #656565);
+            }
+        }
+    }
+
+    .resultado {
+        .lib-css(text-align, center) !important;
+        .lib-css(margin-bottom, 24px);
+        .lib-css(color, #000);
+
+        span {
+            .lib-css(font-weight, bold);
+        }
+
+        .item-buscado {
+            .lib-css(color, @theme__color__primary);
+        }
+    }
+
+    strong.modes-mode.active.mode-grid, strong.modes-mode.active.mode-list {
+        .lib-css(background-color, @theme__color__primary);
+    }
+
+    .div.toolbar.toolbar-products::before{
+        .lib-css(content, '') !important;
+    }
 }
 
-ol.products.list.items.product-items {
-    .flex-center();
-    .lib-css(gap, 10px);
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+    .resultado {
+        .lib-css(font-size, 20px);
+    }
 }
 
-/*OCULTANDO TITULO EM BUSCA SEM RESULTADO*/
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
+    .sem-resultado {
+        .resultado {
+            .lib-css(font-size, 16px);
+        }
 
-// .search-no-results-page .page-title-wrapper {
-//     display: none;
-// }
+        .oque-fazer {
+            .flex-center(column);
+
+            span {
+                .lib-css(font-size, 16px);
+            }
+        }
+    }
+
+}
