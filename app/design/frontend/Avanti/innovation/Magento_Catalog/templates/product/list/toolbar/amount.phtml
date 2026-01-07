@@ -1,0 +1,16 @@
+<?php
+$isSearch = $block->getRequest()->getFullActionName() === 'catalogsearch_result_index';
+$total = (int) $block->getTotalNum();
+?>
+
+<?php if ($total && $isSearch): ?>
+    <p class="toolbar-amount search-total-results">
+        <?= $block->escapeHtml(
+            __(
+                '%1 produtos encontrados',
+                '<span class="toolbar-number">' . $localeFormatter->formatNumber($total) . '</span>'
+            ),
+            ['span']
+        ) ?>
+    </p>
+<?php endif; ?>

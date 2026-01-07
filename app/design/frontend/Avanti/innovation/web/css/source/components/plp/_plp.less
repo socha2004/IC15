@@ -52,12 +52,62 @@
         }
     }
 
-    strong.modes-mode.active.mode-grid, strong.modes-mode.active.mode-list {
+    strong.modes-mode.active.mode-grid,
+    strong.modes-mode.active.mode-list {
         .lib-css(background-color, @theme__color__primary);
+        .lib-css(border, none);
     }
 
-    .div.toolbar.toolbar-products::before{
+    .div.toolbar.toolbar-products::before {
         .lib-css(content, '') !important;
+    }
+
+    .page-wrapper:has(.filter-title) {
+        .page-title-wrapper {
+            span {
+                .lib-css(font-weight, bold);
+                .lib-css(color, #000);
+            }
+        }
+    }
+
+    span.search-query {
+        .lib-css(color, @theme__color__primary) !important;
+    }
+
+    .page-wrapper:has(span.search-query) {
+        .page-title-wrapper {
+            .lib-css(text-align, left);
+
+            span {
+                .lib-css(font-size, 20px);
+                .lib-css(font-weight, bold);
+                .lib-css(color, #000);
+            }
+        }
+    }
+
+    // BLOCO DE SUGESTÕES
+    dl.block {
+        .lib-css(display, none);
+    }
+
+    .modes-mode.mode-grid::before {
+        content: '';
+        width: 14px;
+        height: 14px;
+        background-image: url('@{baseDir}images/plp/grid.png');
+    }
+
+    a.modes-mode.mode-list::before {
+        content: '';
+        width: 14px;
+        height: 14px;
+        background-image: url('@{baseDir}images/plp/list.png');
+    }
+
+    a#mode-grid, a#mode-list{
+        .lib-css(border, none);
     }
 }
 
@@ -67,6 +117,16 @@
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
     .resultado {
         .lib-css(font-size, 20px);
+    }
+
+    .page-wrapper:has(.filter-title) {
+        .page-title-wrapper {
+            .lib-css(text-align, center);
+
+            span {
+                .lib-css(font-size, 32px);
+            }
+        }
     }
 }
 
@@ -88,4 +148,42 @@
         }
     }
 
+    .banner-title-catalog {
+        .lib-css(display, none);
+    }
+
+    .breadcrumbs {
+        .lib-css(display, block)
+    }
+
+    .page-wrapper:has(.filter-title) {
+        .page-title-wrapper {
+            span {
+                .lib-css(font-size, 20px);
+            }
+        }
+    }
+
+    .page-wrapper:has(span.search-query) {
+        .page-title-wrapper {
+            .lib-css(text-align, center);
+
+            span {
+                .lib-css(font-size, 16px);
+            }
+        }
+    }
+
+    p.toolbar-amount.search-total-results {
+        .lib-css(text-align, center);
+        .lib-css(color, #000);
+    }
+
+    .toolbar-sorter.sorter {
+        .lib-css(display, none);
+    }
+
+    .block-title.filter-title {
+        .lib-css(display, none);
+    }
 }

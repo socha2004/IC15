@@ -1,31 +1,51 @@
 <?php
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
 
 /**
  * @var $block \Magento\Theme\Block\Html\Title
  */
+
 $cssClass = $block->getCssClass() ? ' ' . $block->getCssClass() : '';
 $titleHtml = '';
-if (trim($block->getPageHeading())) {
+
+$pageHeading = trim($block->getPageHeading());
+
+if ($pageHeading) {
+
+    // Remove aspas simples
+    $cleanTitle = str_replace("'", '', $pageHeading);
+
+    // Página de resultados de busca
+    if (stripos($cleanTitle, 'Search results for:') !== false) {
+
+        // Extrai o termo buscado
+        $searchTerm = trim(str_replace('Search results for:', '', $cleanTitle));
+
+        $titleContent =
+            __('Search results for:') . ' ' .
+            '<span class="search-query">"'
+            . $block->escapeHtml($searchTerm)
+            . '"</span>';
+    } else {
+        $titleContent = $block->escapeHtml($cleanTitle);
+    }
+
     $titleHtml = '<span class="base" data-ui-id="page-title-wrapper" '
         . $block->getAddBaseAttribute()
         . '>'
-        . $block->escapeHtml($block->getPageHeading())
+        . $titleContent
         . '</span>';
 }
 ?>
+
 <?php if ($titleHtml) : ?>
-<div class="page-title-wrapper<?= $block->escapeHtmlAttr($cssClass) ?>">
-    <h1 class="page-title"
-        <?php if ($block->getId()) : ?> id="<?= $block->escapeHtmlAttr($block->getId()) ?>" <?php endif; ?>
-        <?php if ($block->getAddBaseAttributeAria()) : ?>
+    <div class="page-title-wrapper<?= $block->escapeHtmlAttr($cssClass) ?>">
+        <h1 class="page-title"
+            <?php if ($block->getId()) : ?> id="<?= $block->escapeHtmlAttr($block->getId()) ?>" <?php endif; ?>
+            <?php if ($block->getAddBaseAttributeAria()) : ?>
             aria-labelledby="<?= $block->escapeHtmlAttr($block->getAddBaseAttributeAria()) ?>"
-        <?php endif; ?>>
-        <?= /* @noEscape */ $titleHtml ?>
-    </h1>
-    <?= $block->getChildHtml() ?>
-</div>
+            <?php endif; ?>>
+            <?= /* @noEscape */ $titleHtml ?>
+        </h1>
+        <?= $block->getChildHtml() ?>
+    </div>
 <?php endif; ?>
