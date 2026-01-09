@@ -59,7 +59,7 @@ use Magento\Framework\App\Action\Action;
                         <div class="product-item-inner">
                             <div class="product-item-actions">
                                 <?php if ($showCart): ?>
-                                    <div class="actions-primary">
+                                    <div class="actions-primary botao-comprar">
                                         <?php if ($_item->isSaleable()): ?>
                                             <?php $postParams = $block->getAddToCartPostParams($_item); ?>
                                             <form class="add-to-cart" data-role="tocart-form" data-product-sku="<?= $escaper->escapeHtml($_item->getSku()) ?>" action="<?= $escaper->escapeUrl($postParams['action']) ?>" method="post">
@@ -73,7 +73,7 @@ use Magento\Framework\App\Action\Action;
                                                 <?= $block->getBlockHtml('formkey') ?>
                                                 <button type="submit"
                                                         title="<?= $escaper->escapeHtml(__('Add to Cart')) ?>"
-                                                        class="action tocart primary">
+                                                        class="action tocart primary adicionar-ao-carrinho">
                                                     <span><?= $escaper->escapeHtml(__('Add to Cart')) ?></span>
                                                 </button>
                                             </form>

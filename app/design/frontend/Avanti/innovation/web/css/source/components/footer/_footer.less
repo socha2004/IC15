@@ -11,7 +11,7 @@
         .lib-css(max-width, 100%) !important;
     }
 
-    .social-medias-wrapper {
+    .social-media-wrapper {
         .lib-css(display, flex);
         .lib-css(margin-top, 40px);
         .lib-css(align-items, center);
@@ -72,6 +72,10 @@
         .lib-css(margin-top, 66px)
     }
 
+    .social-media-wrapper{
+        .lib-css(margin-left, 40px);
+    }
+
     .social-media-wrapper figure {
         .lib-css(margin-right, 40px);
     }
@@ -93,7 +97,8 @@
 .media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
     .social-media-wrapper {
         .lib-css(justify-content, center);
-        .lib-css(gap, 40px)
+        .lib-css(gap, 40px);
+        .lib-css(margin-top, 30px);
     }
 
     // .payment-methods-wrapper {

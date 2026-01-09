@@ -7,8 +7,11 @@
         background: #fff;
         border-radius: 100%;
         .lib-css(border, 1px solid @theme__color__primary);
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
+        box-shadow: 6px 5px 17px -3px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 6px 5px 17px -3px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 6px 5px 17px -3px rgba(0, 0, 0, 0.75);
     }
 }
 
@@ -18,28 +21,30 @@
 .slick-next::before {
     content: '';
     display: block;
-    width: 40px;
-    height: 40px;
+    width: 12px;
+    height: 13px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
 }
 
-.slick-prev{
+.slick-prev {
     transform: translateX(-110%);
     .lib-css(margin-bottom, 10px)
 }
 
-.slick-next{
+.slick-next {
     transform: translateX(80%);
 }
 
 /* Esquerda */
 .slick-prev::before {
-    background-image: url('@{baseDir}images/home/arrow-left.png');
+    background-image: url('@{baseDir}images/components/card/card-arrow-prev.png');
+    .lib-css(margin-left, 6px);
 }
 
 /* Direita */
 .slick-next::before {
-    background-image: url('@{baseDir}images/home/arrow-right.png');
+    background-image: url('@{baseDir}images/components/card/card-arrow-prox.png');
+    .lib-css(margin-left, 6px);
 }

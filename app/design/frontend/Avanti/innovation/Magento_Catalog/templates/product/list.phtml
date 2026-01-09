@@ -82,7 +82,7 @@ $_helper = $block->getData('outputHelper');
 
                         <div class="product-item-inner">
                             <div class="product actions product-item-actions">
-                                <div class="actions-primary">
+                                <div class="actions-primary botao-comprar">
                                     <?php if ($_product->isSaleable()):?>
                                         <?php $postParams = $block->getAddToCartPostParams($_product); ?>
                                         <form data-role="tocart-form"
@@ -107,7 +107,7 @@ $_helper = $block->getData('outputHelper');
                                             <?= $block->getBlockHtml('formkey') ?>
                                             <button type="submit"
                                                     title="<?= $escaper->escapeHtmlAttr(__('Add to Cart')) ?>"
-                                                    class="action tocart primary"
+                                                    class="action tocart primary adicionar-ao-carrinho"
                                                     disabled>
                                                 <span><?= $escaper->escapeHtml(__('Add to Cart')) ?></span>
                                             </button>

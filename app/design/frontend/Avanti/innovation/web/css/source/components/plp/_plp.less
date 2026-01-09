@@ -106,8 +106,87 @@
         background-image: url('@{baseDir}images/plp/list.png');
     }
 
-    a#mode-grid, a#mode-list{
+    a#mode-grid,
+    a#mode-list {
         .lib-css(border, none);
+    }
+
+    /*BLOCO DO FILTRO*/
+    .block-content.filter-content {
+        .lib-css(color, #000);
+        .lib-css(text-transform, none);
+    }
+
+    // select#sorter {
+    //     background: #FAFAFA;
+    //     border-radius: 5px;
+    // }
+
+    .div.toolbar.toolbar-products::after {
+        content: '' !important;
+    }
+
+    span.filter-label,
+    strong.block-subtitle.filter-current-subtitle {
+        .lib-css(color, @theme__color__primary) !important;
+    }
+
+
+    /*BOTOES DE AVANÇAR A PÁGINA*/
+    strong.page {
+        .lib-css(width, 20px);
+        .lib-css(height, 30px);
+        .lib-css(border-radius, 50%);
+        .lib-css(background-color, @theme__color__primary) !important;
+
+        span {
+            .lib-css(color, #fff);
+            .lib-css(padding, 0);
+            .lib-css(line-height, 30px);
+        }
+
+    }
+
+    /*BOTOES DE AVANÇAR A PÁGINA*/
+    a.action.next {
+        .lib-css(background-color, @theme__color__primary);
+        .lib-css(border, none);
+        .flex-center();
+    }
+
+    a.action.next::before {
+        content: '' !important;
+        width: 17px;
+        height: 17px;
+        background-image: url('@{baseDir}images/plp/arrow-prox-page.png');
+        .lib-css(background-repeat, no-repeat);
+        .lib-css(background-position, center);
+        .lib-css(background-size, contain);
+        .lib-css(margin-top, 5px) !important;
+    }
+
+    a.action.previous {
+        .lib-css(background-color, @theme__color__primary);
+        .lib-css(border, none);
+    }
+
+    a.action.previous::before {
+        content: '' !important;
+        width: 17px;
+        height: 17px;
+        background-image: url('@{baseDir}images/plp/arrow-prox-page.png');
+        .lib-css(background-repeat, no-repeat);
+        .lib-css(background-position, center);
+        .lib-css(background-size, contain);
+        .lib-css(margin-top, 5px) !important;
+    }
+
+    .field.limiter {
+        .lib-css(color, #000);
+
+        div.control select {
+            .lib-css(border, 1px solid black);
+        }
     }
 }
 
@@ -148,7 +227,7 @@
         }
     }
 
-    .banner-title-catalog {
+    .category-image {
         .lib-css(display, none);
     }
 
@@ -179,11 +258,14 @@
         .lib-css(color, #000);
     }
 
-    .toolbar-sorter.sorter {
-        .lib-css(display, none);
+    html:has(.catalogsearch-result-index) {
+        .toolbar-sorter.sorter {
+            .lib-css(display, none);
+        }
+
+        .block-title.filter-title {
+            .lib-css(display, none);
+        }
     }
 
-    .block-title.filter-title {
-        .lib-css(display, none);
-    }
 }
