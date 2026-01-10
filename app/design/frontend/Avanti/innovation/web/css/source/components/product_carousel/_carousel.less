@@ -1,6 +1,13 @@
 //  Common (styles-m.css)
 //  _____________________________________________
 & when (@media-common =true) {
+
+    ol.products.list.items.product-items {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
     .swatch-attribute-options.clearfix {
         .lib-css(display, flex);
         .lib-css(flex-wrap, wrap);
@@ -84,4 +91,13 @@
         .lib-css(border-bottom-left-radius, 10px);
         .lib-css(border-bottom-right-radius, 10px);
     }
+
+    ol.products.list.items.product-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    li.item.product.product-item {
+        .lib-css(width, 166px);
+    }
 }
+

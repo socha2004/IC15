@@ -6,6 +6,8 @@
 !/.magento/**
 /.magento/local
 !/app
+!/backup/*
+!/backup
 !/app/*/
 !/app/code/**
 !/app/design/**
