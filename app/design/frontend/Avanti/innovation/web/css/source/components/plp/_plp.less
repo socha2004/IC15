@@ -254,6 +254,7 @@
         .lib-css(color, #000);
     }
 
+    // Oculta filtros em resultado de busca
     html:has(.catalogsearch-result-index) {
         .toolbar-sorter.sorter {
             .lib-css(display, none);
@@ -264,4 +265,28 @@
         }
     }
 
+    .block-title.filter-title {
+        strong {
+            .flex-center();
+            .lib-css(gap, 5px);
+            .lib-css(background-color, #fff);
+            .lib-css(border, 1px solid #ddd);
+            .lib-css(color, #000);
+            .lib-css(text-transform, bold);
+        }
+
+        strong::before {
+            .lib-css(content, url('@{baseDir}images/plp/config-filtro.png'));
+            .lib-css(width, 16px);
+            .lib-css(height, 16px);
+        }
+    }
+
+    label.sorter-label {
+        .lib-css(color, #000);
+    }
+
+    select#sorter {
+        .lib-css(background-color, #FAFAFA);
+    }
 }
