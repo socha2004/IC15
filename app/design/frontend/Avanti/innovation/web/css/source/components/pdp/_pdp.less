@@ -1,0 +1,88 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+    .product-details-columns {
+        display: flex;
+        gap: 24px;
+        width: 100%;
+        .lib-css(color, #000);
+    }
+
+    .product-details-columns__col {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+
+    .title-details {
+        .lib-css(font-size, 16px);
+        .lib-css(font-weight, bold);
+    }
+
+    .product.attribute.description,
+    .table-wrapper {
+        .lib-css(margin-top, 16px);
+    }
+
+    .product-info-main .product-info-price .price-box {
+        .lib-css(text-align, left);
+    }
+
+    html:has(.catalog-product-view) {
+        span.base {
+            .lib-css(font-size, 12px);
+            .lib-css(font-weight, bold);
+            .lib-css(color, #000);
+        }
+    }
+
+    span.price {
+        .lib-css(color, @theme__color__primary);
+    }
+
+    .product-reviews-summary {
+        .lib-css(display, none);
+    }
+
+    .product-info-main .product-info-price {
+        .lib-css(display, flex);
+        .lib-css(flex-direction, column-reverse);
+        .lib-css(border, none);
+
+        .product-info-stock-sku {
+            .lib-css(padding-left, 0) !important;
+        }
+
+        .stock.available,
+        .product.attribute.sku {
+            .lib-css(text-align, left);
+            .lib-css(text-transform, none);
+        }
+
+        .stock.available {
+            .lib-css(color, @theme__color__primary);
+            .lib-css(font-weight, lighter);
+        }
+    }
+
+    .product-add-form {
+        .lib-css(padding-top, 0);
+    }
+
+    button#product-addtocart-button {
+        width: 100%;
+        border-radius: 10px;
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {}
+
+/* Mobile: empilha */
+@media (max-width: 768px) {
+    .product-details-columns {
+        display: block;
+    }
+}
