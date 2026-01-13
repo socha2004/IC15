@@ -6,5 +6,12 @@ var config = {
         slick: {
             deps: ['jquery']
         }
+    },
+    deps: [],
+    map: {
+       '*': {
+           
+           'Avanti_Theme/js/qty-stepper': 'js/qty-stepper',
+          }
     }
 };
