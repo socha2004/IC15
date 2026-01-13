@@ -37,7 +37,7 @@ define([
             var $title = $block.find('h4').first();
             var $list = $title.next('ul');
             $list.addClass("borda-titulo");
-            $title.addClass("borda-titulo");
+            // $title.addClass("borda-titulo");
 
             if (!$list.length) {
                 console.log("footer-accordion: bloco sem <ul> logo após o <h4>");
@@ -51,16 +51,19 @@ define([
 
             // Evitar duplicar eventos
             $title
-                .off('click.footerAccordion', function () {
-                    resolveBorda();
-                })
+                .off('click.footerAccordion')
                 .on('click.footerAccordion', function () {
-                    // $title.removeClass("borda-titulo");
-                    // $list.addClass("borda-titulo");
-                    // Se quiser só um aberto por vez, descomente:
-                    $accordions.not($block).removeClass('is-open').find('ul').slideUp();
 
-                    $block.toggleClass('is-open');
+                    // Fecha todos os outros
+                    $accordions
+                        .not($block)
+                        .removeClass('is-open')
+                        .addClass('is-closed')
+                        .find('ul')
+                        .slideUp();
+
+                    // Alterna o atual
+                    $block.toggleClass('is-open is-closed');
                     $list.slideToggle(200);
                 });
         });
@@ -70,7 +73,7 @@ define([
         // $('.is-closed')
         //     .find('h4')
         //     .addClass('borda-titulo')
-        if($('.is-open').get(0)){
+        if ($('.is-open').get(0)) {
             console.log('accordion aberto')
         }
     }
