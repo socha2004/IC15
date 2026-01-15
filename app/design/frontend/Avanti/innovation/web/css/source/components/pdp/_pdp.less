@@ -34,6 +34,18 @@
             .lib-css(font-weight, bold);
             .lib-css(color, #000);
         }
+
+        .product-options-wrapper {
+            .swatch-attribute-options.clearfix {
+                .lib-css(justify-content, left);
+            }
+        }
+
+        .swatch-attribute-label {
+            .lib-css(font-size, 16px);
+            .lib-css(font-weight, bold);
+            .lib-css(color, #000)
+        }
     }
 
     span.price {
@@ -41,7 +53,7 @@
     }
 
     .product-reviews-summary {
-        .lib-css(display, none);
+        .lib-visually-hidden()
     }
 
     .product-info-main .product-info-price {
@@ -65,20 +77,108 @@
         }
     }
 
-    .product-add-form {
-        .lib-css(padding-top, 0);
+    div.product-add-form {
+        .lib-css(padding-top, 0) !important;
+        .lib-css(margin-bottom, 0);
     }
 
     button#product-addtocart-button {
         width: 100%;
         border-radius: 10px;
+        .lib-css(font-size, 16px);
+        .lib-css(text-transform, capitalize);
+    }
+
+    .stock.available {
+        span {
+            .flex-center();
+            .lib-css(justify-content, left);
+            .lib-css(gap, 5px);
+        }
+
+        span::before {
+            .lib-css(content, url('@{baseDir}images/pdp/bola-azul.png'));
+        }
+    }
+
+    .paypal {
+        .lib-visually-hidden()
+    }
+
+    .box-tocart .action.tocart:not(:last-child) {
+        .lib-css(margin-bottom, 0);
+    }
+
+    .product-social-links {
+        .lib-css(text-align, left);
+
+        span {
+            .lib-css(color, @theme__color__primary);
+            .lib-css(text-transform, none);
+        }
+
+        .action.towishlist::before {
+            .lib-css(content, url('@{baseDir}images/pdp/wishlist-heart.png'));
+            .lib-css(width, 18px);
+            .lib-css(height, 17px);
+        }
+    }
+
+    .shipping-wrapper {
+        .lib-css(display, flex);
+        .lib-css(align-items, baseline);
+        .lib-css(color, #000);
+        .lib-css(margin-top, 15px);
+
+        button.action.primary.estimate {
+            .lib-css(background-color, #fff);
+            .lib-css(border, 1px solid @theme__color__primary);
+            .lib-css(color, @theme__color__primary);
+            .lib-css(font-weight, bold);
+            .lib-css(border-radius, 8px);
+            letter-spacing: normal;
+            text-transform: capitalize;
+        }
+
+        input.input-text.cep {
+            .lib-css(height, 40px);
+            .lib-css(border, 1px solid #ddd);
+            .lib-css(border-radius, 8px);
+        }
+
+        .nao-sabe-cep {
+            .lib-css(margin-top, 8px);
+        }
+    }
+
+    strong.cep-title {
+        .lib-css(color, #000);
+    }
+
+    button.action.primary.estimate,
+    input.input-text.cep {
+        .lib-css(margin-bottom, 8px);
     }
 }
 
 //
 //  Desktop
 //  _____________________________________________
-.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {}
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+    button.action.primary.estimate {
+        .lib-css(width, 102px);
+        .lib-css(height, 40px);
+        .lib-css(font-size, 14px);
+    }
+
+    input.input-text.cep {
+        .lib-css(width, 405px);
+    }
+
+    .nao-sabe-cep {
+        .lib-css(text-decoration, underline);
+    }
+}
 
 /* Mobile: empilha */
 @media (max-width: 768px) {
