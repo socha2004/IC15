@@ -124,7 +124,7 @@
         }
     }
 
-    .shipping-estimator{
+    .shipping-estimator {
         .lib-css(margin-bottom, 50px);
     }
 
@@ -194,7 +194,7 @@
             background-color: #f5f5f5;
         }
 
-        tbody tr{
+        tbody tr {
             .lib-css(height, 40px);
             .lib-css(align-content, center);
         }
@@ -208,6 +208,75 @@
         }
     }
 
+    .fotorama__thumb-border {
+        .lib-css(border, 2px solid @theme__color__primary) !important;
+        .lib-css(border-radius, 10px);
+    }
+
+    .fotorama__stage.fotorama__shadows--bottom:after,
+    .fotorama__nav.fotorama__shadows--bottom:after {
+        .lib-css(content, url('@{baseDir}images/pdp/seta-prox.png'));
+        .lib-css(height, 10px);
+        .lib-css(text-align, center);
+        .lib-css(background-image, none) !important;
+    }
+
+    .fotorama__thumb--icon {
+        .lib-visually-hidden();
+    }
+
+    .fotorama__arr {
+        .lib-css(background-color, none) !important;
+    }
+
+    .fotorama__thumb__arr:hover,
+    .fotorama__arr:hover {
+        .lib-css(background-color, none) !important;
+    }
+
+    .fotorama__stage.fotorama__shadows--top:before,
+    .fotorama__nav.fotorama__shadows--top:before {
+        .lib-css(content, url('@{baseDir}images/pdp/seta-volta.png'));
+        .lib-css(height, 10px);
+        .lib-css(text-align, center);
+        .lib-css(background-image, none) !important;
+    }
+
+    .fotorama__zoom-in {
+        background: #323232 !important;
+        background-image: none !important;
+        position: relative;
+        .lib-css(margin-bottom, 2px);
+    }
+
+    .fotorama__zoom-in:before {
+        content: url('@{baseDir}images/pdp/plus.png');
+        color: #fff;
+        font-size: 44px;
+        line-height: 1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .fotorama__zoom-out {
+        background: #323232 !important;
+        background-image: none !important;
+        position: relative;
+        margin-top: 1px;
+    }
+
+    .fotorama__zoom-out:before {
+        content: url('@{baseDir}images/pdp/mins.png');
+        color: #fff;
+        font-size: 44px;
+        line-height: 1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 //
