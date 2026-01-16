@@ -164,19 +164,42 @@
         .lib-css(background-color, #535353);
         .lib-css(color, #fff);
         .lib-css(text-transform, capitalize);
-        .lib-css(text-decoration, underline);
         .lib-css(font-size, 14px);
         .flex-center();
         .lib-css(gap, 17px);
         .lib-css(border-radius, 10px);
-        padding-top: unset;
-        padding-bottom: unset;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        .lib-css(margin-bottom, 10px);
     }
 
     .action.share-native::before {
         .lib-css(content, url('@{baseDir}images/pdp/share.png'));
         .lib-css(width, 26px);
         .lib-css(height, 26px);
+    }
+
+    .table-wrapper {
+        .lib-css(border, none) !important;
+    }
+
+    table#product-attribute-specs-table {
+        tbody tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+
+        tbody tr{
+            .lib-css(height, 40px);
+            .lib-css(align-content, center);
+        }
+
+        table#product-attribute-specs-table {
+            width: 100%;
+
+            tr {
+                .lib-css(border-radius, 10px);
+            }
+        }
     }
 
 }
