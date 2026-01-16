@@ -159,6 +159,26 @@
     input.input-text.cep {
         .lib-css(margin-bottom, 8px);
     }
+
+    .action.share-native {
+        .lib-css(background-color, #535353);
+        .lib-css(color, #fff);
+        .lib-css(text-transform, capitalize);
+        .lib-css(text-decoration, underline);
+        .lib-css(font-size, 14px);
+        .flex-center();
+        .lib-css(gap, 17px);
+        .lib-css(border-radius, 10px);
+        padding-top: unset;
+        padding-bottom: unset;
+    }
+
+    .action.share-native::before {
+        .lib-css(content, url('@{baseDir}images/pdp/share.png'));
+        .lib-css(width, 26px);
+        .lib-css(height, 26px);
+    }
+
 }
 
 //

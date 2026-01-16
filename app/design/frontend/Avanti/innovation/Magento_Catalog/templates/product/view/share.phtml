@@ -9,9 +9,7 @@ $title = (string) $product->getName();
 $url = (string) $product->getProductUrl();
 ?>
 <div class="product-share"
-    data-mage-init='{"Avanti_Theme/js/product-share": {
-"title": "<?= $block->escapeJs($title) ?>",
-"url": "<?= $block->escapeJs($url) ?>"
+    data-mage-init='{"Avanti_Theme/js/product-share": { "title": "<?= $block->escapeJs($title) ?>", "url": "<?= $block->escapeJs($url) ?>"
 }}'>
     <button type="button" class="action share-native">
         <?= $block->escapeHtml(__('Share')) ?>
