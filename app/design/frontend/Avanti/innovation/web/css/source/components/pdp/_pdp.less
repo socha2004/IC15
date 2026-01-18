@@ -75,6 +75,23 @@
             .lib-css(color, @theme__color__primary);
             .lib-css(font-weight, lighter);
         }
+
+        .stock.unavailable {
+            .lib-css(color, red);
+            .lib-css(font-weight, lighter);
+
+            span {
+                .flex-center();
+                .lib-css(justify-content, left);
+                .lib-css(gap, 5px);
+                .lib-css(text-transform, none);
+            }
+
+            span::before {
+                .lib-css(content, url('@{baseDir}images/pdp/bola-vermelha.png'));
+                .lib-css(margin-bottom, 5px);
+            }
+        }
     }
 
     div.product-add-form {
@@ -98,6 +115,13 @@
 
         span::before {
             .lib-css(content, url('@{baseDir}images/pdp/bola-azul.png'));
+            .lib-css(margin-bottom, 5px);
+        }
+    }
+
+    html:has(.unavailable) {
+        .shipping-estimator {
+            .lib-visually-hidden();
         }
     }
 
@@ -277,6 +301,23 @@
         left: 50%;
         transform: translate(-50%, -50%);
     }
+
+    .product.alert.stock {
+        .lib-css(background-color, @theme__color__primary);
+        .lib-css(width, 447px);
+        .lib-css(text-align, center);
+        .lib-css(padding, 5px 0 5px);
+
+        a.action.alert::before {
+            .lib-css(content, url('@{baseDir}images/pdp/alert.png'));
+        }
+
+        a.action.alert {
+            .lib-css(color, #DDDDDD);
+            .flex-center();
+            .lib-css(gap, 5px); 
+        }
+    }
 }
 
 //
@@ -302,5 +343,37 @@
 @media (max-width: 768px) {
     .product-details-columns {
         display: block;
+    }
+
+    .product-info-price {
+        padding-left: 10px;
+    }
+
+    .breadcrumbs {
+        margin: 0;
+    }
+
+    // Borda na Imagem Principal (Stage)
+    .fotorama__stage__frame {
+        border: 1px solid #e2e2e2;
+        box-sizing: border-box;
+    }
+
+    .fotorama__arr.fotorama__arr--next,
+    .fotorama__arr.fotorama__arr--prev {
+        display: none;
+    }
+
+    // Estilo para os Dots (Pontinhos) do Fotorama
+    .fotorama__nav__frame--dot {
+
+        // Cor do dot quando está ATIVO (Selecionado)
+        &.fotorama__active {
+            .fotorama__dot {
+                background-color: @theme__color__primary; // Preenchimento
+                border-color: @theme__color__primary;
+                opacity: 1;
+            }
+        }
     }
 }
