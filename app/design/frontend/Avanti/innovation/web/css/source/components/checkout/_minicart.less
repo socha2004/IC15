@@ -1,0 +1,40 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+    strong.product-item-name {
+        .lib-css(text-align, left);
+    }
+
+    #minicart-content-wrapper {
+        .block-content {
+            .lib-css(color, @theme__color__primary);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .minicart-items .product-item:not(:first-child) {
+            .lib-css(border-top, none)
+        }
+
+        .product-item {
+            border-radius: 0;
+            // .lib-css(border-bottom, 1px solid #ccc);
+            width: 100% !important;
+        }
+    }
+
+    div#ui-id-28 {
+       .lib-css(z-index, 1000);
+    }
+
+
+
+    .items-total {
+        order: -3;
+    }
+
+    .minicart-items-wrapper {
+        order: -1;
+    }
+}
