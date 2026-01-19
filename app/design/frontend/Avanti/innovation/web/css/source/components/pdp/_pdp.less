@@ -164,6 +164,7 @@
             .lib-css(color, @theme__color__primary);
             .lib-css(font-weight, bold);
             .lib-css(border-radius, 8px);
+            .lib-css(height, 40px);
             letter-spacing: normal;
             text-transform: capitalize;
         }
@@ -304,7 +305,6 @@
 
     .product.alert.stock {
         .lib-css(background-color, @theme__color__primary);
-        .lib-css(width, 447px);
         .lib-css(text-align, center);
         .lib-css(padding, 5px 0 5px);
 
@@ -315,7 +315,7 @@
         a.action.alert {
             .lib-css(color, #DDDDDD);
             .flex-center();
-            .lib-css(gap, 5px); 
+            .lib-css(gap, 5px);
         }
     }
 }
@@ -326,7 +326,6 @@
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
     button.action.primary.estimate {
         .lib-css(width, 102px);
-        .lib-css(height, 40px);
         .lib-css(font-size, 14px);
     }
 
@@ -337,10 +336,24 @@
     .nao-sabe-cep {
         .lib-css(text-decoration, underline);
     }
+
+    .product.alert.stock {
+        .lib-css(width, 447px);
+    }
 }
 
-/* Mobile: empilha */
 @media (max-width: 768px) {
+
+    button.action.primary.estimate {
+        height: 40px;
+        width: 100px;
+        font-size: 15px;
+    }
+
+    .shipping-wrapper input.input-text.cep {
+        .lib-css(width, 260px);
+    }
+
     .product-details-columns {
         display: block;
     }
