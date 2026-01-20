@@ -5,3 +5,10 @@
     .lib-css(flex-direction, @direction);
     .lib-css(flex-wrap, @wrap);
 }
+
+.fontHelper(@color: #000, @size: 14px) {
+    .lib-css(color, @color);
+    .lib-css(font-size, @size);
+    .lib-css(font-weight, bold);
+    .lib-css(letter-spacing, normal);
+}
