@@ -10,8 +10,8 @@ var config = {
     deps: [],
     map: {
        '*': {
-           
            'Avanti_Theme/js/qty-stepper': 'js/qty-stepper',
+           'Avanti_Theme/js/product-share': 'js/product-share'
           }
     }
 };

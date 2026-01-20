@@ -1,0 +1,392 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+    .product-details-columns {
+        display: flex;
+        gap: 24px;
+        width: 100%;
+        .lib-css(color, #000);
+    }
+
+    .product-details-columns__col {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+
+    .title-details {
+        .lib-css(font-size, 16px);
+        .lib-css(font-weight, bold);
+    }
+
+    .product.attribute.description,
+    .table-wrapper {
+        .lib-css(margin-top, 16px);
+    }
+
+    .product-info-main .product-info-price .price-box {
+        .lib-css(text-align, left);
+    }
+
+    html:has(.catalog-product-view) {
+        span.base {
+            .lib-css(font-size, 16px);
+            .lib-css(font-weight, bold);
+            .lib-css(color, #000);
+        }
+
+        .product-options-wrapper {
+            .swatch-attribute-options.clearfix {
+                .lib-css(justify-content, left);
+            }
+        }
+
+        .swatch-attribute-label {
+            .lib-css(font-size, 16px);
+            .lib-css(font-weight, bold);
+            .lib-css(color, #000)
+        }
+    }
+
+    span.price {
+        .lib-css(color, @theme__color__primary);
+    }
+
+    .product-reviews-summary {
+        .lib-visually-hidden()
+    }
+
+    .product-info-main .product-info-price {
+        .lib-css(display, flex);
+        .lib-css(flex-direction, column-reverse);
+        .lib-css(border, none);
+
+        .product-info-stock-sku {
+            .lib-css(padding-left, 0) !important;
+        }
+
+        .stock.available,
+        .product.attribute.sku {
+            .lib-css(text-align, left);
+            .lib-css(text-transform, none);
+        }
+
+        .stock.available {
+            .lib-css(color, @theme__color__primary);
+            .lib-css(font-weight, lighter);
+        }
+
+        .stock.unavailable {
+            .lib-css(color, red);
+            .lib-css(font-weight, lighter);
+
+            span {
+                .flex-center();
+                .lib-css(justify-content, left);
+                .lib-css(gap, 5px);
+                .lib-css(text-transform, none);
+            }
+
+            span::before {
+                .lib-css(content, url('@{baseDir}images/pdp/bola-vermelha.png'));
+                .lib-css(margin-bottom, 5px);
+            }
+        }
+    }
+
+    div.product-add-form {
+        .lib-css(padding-top, 0) !important;
+        .lib-css(margin-bottom, 0);
+    }
+
+    button#product-addtocart-button {
+        width: 100%;
+        border-radius: 10px;
+        .lib-css(font-size, 16px);
+        .lib-css(text-transform, capitalize);
+    }
+
+    .stock.available {
+        span {
+            .flex-center();
+            .lib-css(justify-content, left);
+            .lib-css(gap, 5px);
+        }
+
+        span::before {
+            .lib-css(content, url('@{baseDir}images/pdp/bola-azul.png'));
+            .lib-css(margin-bottom, 5px);
+        }
+    }
+
+    html:has(.unavailable) {
+        .shipping-estimator {
+            .lib-visually-hidden();
+        }
+    }
+
+    .paypal {
+        .lib-visually-hidden()
+    }
+
+    .box-tocart .action.tocart:not(:last-child) {
+        .lib-css(margin-bottom, 0);
+    }
+
+    .product-social-links {
+        .lib-css(text-align, left);
+
+        span {
+            .lib-css(color, @theme__color__primary);
+            .lib-css(text-transform, none);
+        }
+
+        .action.towishlist::before {
+            .lib-css(content, url('@{baseDir}images/pdp/wishlist-heart.png'));
+            .lib-css(width, 18px);
+            .lib-css(height, 17px);
+        }
+    }
+
+    .shipping-estimator {
+        .lib-css(margin-bottom, 50px);
+    }
+
+    .shipping-wrapper {
+        .lib-css(display, flex);
+        .lib-css(align-items, baseline);
+        .lib-css(color, #000);
+        .lib-css(margin-top, 15px);
+
+        button.action.primary.estimate {
+            .lib-css(background-color, #fff);
+            .lib-css(border, 1px solid @theme__color__primary);
+            .lib-css(color, @theme__color__primary);
+            .lib-css(font-weight, bold);
+            .lib-css(border-radius, 8px);
+            .lib-css(height, 40px);
+            letter-spacing: normal;
+            text-transform: capitalize;
+        }
+
+        input.input-text.cep {
+            .lib-css(height, 40px);
+            .lib-css(border, 1px solid #ddd);
+            .lib-css(border-radius, 8px);
+        }
+
+        .nao-sabe-cep {
+            .lib-css(margin-top, 8px);
+        }
+    }
+
+    strong.cep-title {
+        .lib-css(color, #000);
+    }
+
+    button.action.primary.estimate,
+    input.input-text.cep {
+        .lib-css(margin-bottom, 8px);
+    }
+
+    .action.share-native {
+        .lib-css(background-color, #535353);
+        .lib-css(color, #fff);
+        .lib-css(text-transform, capitalize);
+        .lib-css(font-size, 14px);
+        .flex-center();
+        .lib-css(gap, 17px);
+        .lib-css(border-radius, 10px);
+        padding-top: 5px;
+        padding-bottom: 5px;
+        .lib-css(margin-bottom, 10px);
+    }
+
+    .action.share-native::before {
+        .lib-css(content, url('@{baseDir}images/pdp/share.png'));
+        .lib-css(width, 26px);
+        .lib-css(height, 26px);
+    }
+
+    .table-wrapper {
+        .lib-css(border, none) !important;
+    }
+
+    table#product-attribute-specs-table {
+        .lib-css(width, 560px);
+
+        tbody tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+
+        tbody tr {
+            .lib-css(height, 40px);
+            .lib-css(align-content, center);
+        }
+
+        table#product-attribute-specs-table {
+            width: 100%;
+
+            tr {
+                .lib-css(border-radius, 10px);
+            }
+        }
+    }
+
+    .fotorama__thumb-border {
+        .lib-css(border, 2px solid @theme__color__primary) !important;
+        .lib-css(border-radius, 10px);
+    }
+
+    .fotorama__stage.fotorama__shadows--bottom:after,
+    .fotorama__nav.fotorama__shadows--bottom:after {
+        .lib-css(content, url('@{baseDir}images/pdp/seta-prox.png'));
+        .lib-css(height, 10px);
+        .lib-css(text-align, center);
+        .lib-css(background-image, none) !important;
+    }
+
+    .fotorama__thumb--icon {
+        .lib-visually-hidden();
+    }
+
+    .fotorama__arr {
+        .lib-css(background-color, none) !important;
+    }
+
+    .fotorama__thumb__arr:hover,
+    .fotorama__arr:hover {
+        .lib-css(background-color, none) !important;
+    }
+
+    .fotorama__stage.fotorama__shadows--top:before,
+    .fotorama__nav.fotorama__shadows--top:before {
+        .lib-css(content, url('@{baseDir}images/pdp/seta-volta.png'));
+        .lib-css(height, 10px);
+        .lib-css(text-align, center);
+        .lib-css(background-image, none) !important;
+    }
+
+    .fotorama__zoom-in {
+        background: #323232 !important;
+        background-image: none !important;
+        position: relative;
+        .lib-css(margin-bottom, 2px);
+    }
+
+    .fotorama__zoom-in:before {
+        content: url('@{baseDir}images/pdp/plus.png');
+        color: #fff;
+        font-size: 44px;
+        line-height: 1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .fotorama__zoom-out {
+        background: #323232 !important;
+        background-image: none !important;
+        position: relative;
+        margin-top: 1px;
+    }
+
+    .fotorama__zoom-out:before {
+        content: url('@{baseDir}images/pdp/mins.png');
+        color: #fff;
+        font-size: 44px;
+        line-height: 1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .product.alert.stock {
+        .lib-css(background-color, @theme__color__primary);
+        .lib-css(text-align, center);
+        .lib-css(padding, 5px 0 5px);
+
+        a.action.alert::before {
+            .lib-css(content, url('@{baseDir}images/pdp/alert.png'));
+        }
+
+        a.action.alert {
+            .lib-css(color, #DDDDDD);
+            .flex-center();
+            .lib-css(gap, 5px);
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+    button.action.primary.estimate {
+        .lib-css(width, 102px);
+        .lib-css(font-size, 14px);
+    }
+
+    input.input-text.cep {
+        .lib-css(width, 405px);
+    }
+
+    .nao-sabe-cep {
+        .lib-css(text-decoration, underline);
+    }
+
+    .product.alert.stock {
+        .lib-css(width, 447px);
+    }
+}
+
+@media (max-width: 768px) {
+
+    button.action.primary.estimate {
+        height: 40px;
+        width: 100px;
+        font-size: 15px;
+    }
+
+    .shipping-wrapper input.input-text.cep {
+        .lib-css(width, 260px);
+    }
+
+    .product-details-columns {
+        display: block;
+    }
+
+    .product-info-price {
+        padding-left: 10px;
+    }
+
+    .breadcrumbs {
+        margin: 0;
+    }
+
+    // Borda na Imagem Principal (Stage)
+    .fotorama__stage__frame {
+        border: 1px solid #e2e2e2;
+        box-sizing: border-box;
+    }
+
+    .fotorama__arr.fotorama__arr--next,
+    .fotorama__arr.fotorama__arr--prev {
+        display: none;
+    }
+
+    // Estilo para os Dots (Pontinhos) do Fotorama
+    .fotorama__nav__frame--dot {
+
+        // Cor do dot quando está ATIVO (Selecionado)
+        &.fotorama__active {
+            .fotorama__dot {
+                background-color: @theme__color__primary; // Preenchimento
+                border-color: @theme__color__primary;
+                opacity: 1;
+            }
+        }
+    }
+}
