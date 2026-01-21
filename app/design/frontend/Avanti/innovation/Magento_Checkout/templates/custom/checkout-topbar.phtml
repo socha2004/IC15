@@ -1,23 +1,32 @@
 <?php
+
 /** @var $block Magento\Framework\View\Element\Template */
 
 ?>
 
 <div class="topbar-wrapper">
-    <img src="<?php echo $block->getViewFileUrl('images/logo.svg'); ?>" alt="logo">
-
+    <a href="https://magento.innovation/">
+        <img src="<?php echo $block->getViewFileUrl('images/logo.svg'); ?>" alt="logo">
+    </a>
+    
     <div class="progress-wrapper">
         <div class="carrinho">
-            <span>1</span>
-            <span>Carrinho</span>
+            <div class="content-progress">
+                <span class="active">1</span>
+                <span>Carrinho</span>
+            </div>
         </div>
         <div class="entrega">
-            <span>2</span>
-            <span>Entrega</span>
+            <div class="content-progress">
+                <span class="disabled">2</span>
+                <span>Entrega</span>
+            </div>
         </div>
         <div class="pagamento">
-            <span>3</span>
-            <span>Pagamento</span>
+            <div class="content-progress">
+                <span class="disabled">3</span>
+                <span>Pagamento</span>
+            </div>
         </div>
     </div>
 

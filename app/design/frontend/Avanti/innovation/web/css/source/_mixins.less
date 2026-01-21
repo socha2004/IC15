@@ -1,6 +1,6 @@
-.flex-center(@direction: row, @wrap: wrap) {
+.flex-center(@direction: row, @wrap: wrap, @justify: center) {
     .lib-css(display, flex);
-    .lib-css(justify-content, center);
+    .lib-css(justify-content, @justify);
     .lib-css(align-items, center);
     .lib-css(flex-direction, @direction);
     .lib-css(flex-wrap, @wrap);
