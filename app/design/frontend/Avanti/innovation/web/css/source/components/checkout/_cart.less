@@ -3,20 +3,174 @@
 //  _____________________________________________
 & when (@media-common =true) {
     html:has(.checkout-cart-index) {
-        span.base{.fontHelper(#000, 24px)}
+        span.base {
+            .fontHelper(#000, 24px)
+        }
     }
+
+    // RESUMO DO CARRINHO
+    .cart-summary {
+        .lib-css(background-color, #fff);
+        .lib-css(border-radius, 10px);
+        .lib-css(border, 1px solid #c9c9c9);
+        .lib-css(padding, 27px 20px);
+
+        strong#block-shipping-heading {
+            .fontHelper(#3B3B3B, 16px, 600);
+        }
+
+        p.field.note {
+            .fontHelper(#787878, 14px, 400);
+        }
+
+        strong.summary.title {
+            .fontHelper(#3B3B3B, 18px, bold)
+        }
+
+        form#shipping-zip-form {
+            span {
+                .fontHelper(#3B3B3B, 14px, bold)
+            }
+
+            select,
+            input {
+                .lib-css(border-color, #9D9D9D)
+            }
+        }
+
+        dt.item-title {
+            .fontHelper(#3B3B3B, 14px, bold)
+        }
+
+        .field.choice.item label,
+        .field.choice.item span.price {
+            .fontHelper(#3B3B3B, 14px, bold)
+        }
+
+
+        tr.totals.sub,
+        tr.totals.sub span.price,
+        tr.totals.shipping.excl th.mark,
+        tr.totals.shipping.excl td.amount span.price {
+            .fontHelper(#787878, 14px, bold)
+        }
+
+        tr.grand.totals,
+        tr.grand.totals span.price {
+            .fontHelper(#3B3B3B, 18px, bold);
+        }
+
+        a.action.multicheckout {
+            .fontHelper(#3B3B3B, 13px, bold);
+            .lib-css(text-decoration, underline);
+        }
+
+        button.action.primary.checkout {
+            .fontHelper(#fff, 16px, bold);
+            .lib-css(border-radius, 8px);
+        }
+    }
+
+    button.action.update {
+        .lib-css(border-radius, 8px);
+        .fontHelper(#fff, 16px, bold);
+        .lib-css(background-color, @theme__color__primary);
+        .lib-css(padding, 13px 34px);
+    }
+
+    // LISTA DE PRODUTOS
+    .cart.table-wrapper {
+        table#shopping-cart-table {
+            thead {
+                .lib-css(background-color, #F5F5F5);
+                .lib-css(border-top-left-radius, 8px);
+                .lib-css(border-top-right-radius, 8px);
+                .fontHelper(#000, 16px, bold);
+            }
+        }
+
+        tr.item-info {
+
+            td.col.price,
+            td.col.qty,
+            td.col.subtotal {
+                .fontHelper(#000, 14px, 400);
+            }
+        }
+
+        input {
+            .lib-css(border, 1px solid #B8B8B8);
+        }
+
+        strong.product-item-name {
+            .lib-css(text-align, left);
+        }
+    }
+
+    .cart.table-wrapper .towishlist:before {
+        .lib-css(color, @theme__color__primary) !important;
+    }
+
+    strong#block-discount-heading {
+        .fontHelper(#353535, 14px, 500);
+    }
+
+    button.action.apply.primary {
+        .fontHelper(#fff, 13px, 500);
+    }
+
+    .cart-discount {
+        .lib-css(border, none) !important;
+    }
+
 }
 
 //
 //  Desktop
 //  _____________________________________________
-.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) { 
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+    .cart.table-wrapper {
+        span.price {
+            .fontHelper(#565656, 16px, 400);
+        }
+    }
 
+    .cart.table-wrapper .actions-toolbar>.action-edit:before {
+        .lib-css(content, url('@{baseDir}/images/checkout/edit-desktop.svg'));
+    }
+
+    .cart.table-wrapper .actions-toolbar>.action-delete:before {
+        .lib-css(content, url('@{baseDir}/images/checkout/trash-desktop.svg'));
+    }
 }
 
 //
 //  Mobile
 //  _____________________________________________
-.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) { 
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
 
+    .cart-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cart-summary {
+        .lib-css(width, 360px);
+    }
+
+    .cart.table-wrapper {
+        span.price {
+            .fontHelper(#000, 16px, 900);
+        }
+    }
+
+    .cart.table-wrapper .actions-toolbar>.action-edit:before {
+        .lib-css(content, url('@{baseDir}/images/checkout/edit-mobile.svg'));
+    }
+
+    .cart.table-wrapper .actions-toolbar>.action-delete:before {
+        .lib-css(content, url('@{baseDir}/images/checkout/trash-mobile.svg'));
+    }
 }

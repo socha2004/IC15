@@ -6,9 +6,9 @@
     .lib-css(flex-wrap, @wrap);
 }
 
-.fontHelper(@color: #000, @size: 14px) {
+.fontHelper(@color: #000, @size: 14px, @weight: bold) {
     .lib-css(color, @color);
     .lib-css(font-size, @size);
-    .lib-css(font-weight, bold);
+    .lib-css(font-weight, @weight);
     .lib-css(letter-spacing, normal);
 }
