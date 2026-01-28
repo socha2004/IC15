@@ -1,4 +1,15 @@
+@font-face {
+    font-family: 'Roboto-Light';
+    src: url('@{baseDir}/fonts/roboto/Roboto-Light.ttf');
+}
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url('@{baseDir}/fonts/roboto/Roboto-Bold.ttf');
+}
+
 @import 'components/_topbar.less';
+@import 'components/_shipping.less';
+@import 'components/_success.less';
 
 .action.showcart:before {
     background: none !important;
@@ -13,4 +24,30 @@
     width: 23px !important;
     height: 23px !important;
     opacity: 1 !important;
+}
+
+.footer-checkout-rows-wrapper,
+.footer-rows-wrapper-checkout {
+    .flex-center(row, wrap, space-around);
+}
+
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
+    .cms-container {
+        .lib-css(text-align, center);
+        .lib-css(background-color, #F5F5F5);
+        .lib-css(padding-top, 20px);
+        .lib-css(width, 100%);
+        
+        .texto-atendimento span{
+            .lib-css(font-size, 10px);
+        }
+    }
+
+    .footer.content {
+        .lib-css(border-top, unset);
+    }
 }

@@ -1,11 +1,17 @@
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 
     <update handle="checkout_custom_topbar"/>
 
     <body>
+        <referenceContainer name="page.wrapper">
+            <block class="Magento\Framework\View\Element\Template" name="custom.checkout.topbar" template="Magento_Checkout::custom/checkout-topbar.phtml" before="main.content"/>
+        </referenceContainer>
+
         <!-- Remove menu de categorias -->
         <referenceBlock name="catalog.topnav" remove="true"/>
+
+        <referenceBlock name="logo" remove="true"/>
+        <!-- <referenceBlock name="innovation.promo" remove="false"/> -->
 
         <!-- Remove busca -->
         <referenceBlock name="top.search" remove="true"/>
@@ -15,5 +21,32 @@
 
         <!-- Remove links de conta -->
         <referenceBlock name="header.links" remove="true"/>
+        <referenceContainer name="footer.newsletter" remove="true" />
+
+        <referenceBlock name="footer.rows.wrapper" remove="true" />
+        <referenceContainer name="footer-container" remove="false"/>
+
+        <referenceContainer name="before.body.end">
+            <container name="checkout-footer-container" htmlTag="footer" htmlClass="page-footer" before="-">
+                <container name="footer.checkout" as="footer" label="Checkout Page Footer" htmlTag="div" htmlClass="footer content">
+                    <container name="footer.checkout.rows.wrapper" label="Footer Checkout rows Wrapper" htmlTag="div" htmlClass="footer-checkout-rows-wrapper">
+                        <container name="cms_container" label="CMS Block Container" htmlTag="div" htmlClass="cms-container">
+                            <block class="Magento\Cms\Block\Block" name="footer_row_checkout" before="-">
+                                <arguments>
+                                    <argument name="block_id" xsi:type="string">footer_row_checkout</argument>
+                                </arguments>
+                            </block>
+                        </container>
+
+                        <!-- linha 2: bloco .phtml -->
+                        <block class="Magento\Framework\View\Element\Template" name="flag.cards" template="Magento_Theme::html/flags-cards.phtml" />
+                    </container>
+                    <block class="Magento\Framework\View\Element\Template" name="stamps.partners" template="Magento_Theme::html/stamps-partners.phtml"/>
+                </container>
+            </container>
+        </referenceContainer>
+
+        <move element="flag.cards" destination="footer.checkout.rows.wrapper" after="cms_container"/>
+
     </body>
 </page>

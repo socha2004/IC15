@@ -6,6 +6,18 @@
         span.base {
             .fontHelper(#000, 24px)
         }
+
+        .slick-track {
+            .lib-css(width, 100%)!important;
+
+            .slick-slide.slick-active {
+                .lib-css(width, 100%)!important;
+            }
+        }
+
+        .slick-list {
+            .lib-css(width, 100%)!important;
+        }
     }
 
     // RESUMO DO CARRINHO
@@ -142,6 +154,7 @@
     .cart.table-wrapper .actions-toolbar>.action-delete:before {
         .lib-css(content, url('@{baseDir}/images/checkout/trash-desktop.svg'));
     }
+    
 }
 
 //

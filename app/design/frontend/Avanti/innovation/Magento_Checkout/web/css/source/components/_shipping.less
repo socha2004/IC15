@@ -1,0 +1,286 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+
+    /*TELA DE ENDEREÇO*/
+    .shipping-address-item.selected-item {
+        .fontHelper(#333333, 15px, bold);
+    }
+
+    .opc-wrapper .shipping-address-item.selected-item {
+        .lib-css(border-color, #D9D9D9)
+    }
+
+    button.action.action-show-popup {
+        .lib-css(background-color, @theme__color__primary);
+        .fontHelper(#fff, 16px, 500);
+        .lib-css(text-transform, none);
+        .lib-css(border-radius, 8px);
+    }
+
+    .opc-wrapper .step-title {
+        .lib-css(border, none);
+        .fontHelper(#333333, 24px)
+    }
+
+    .product-item-inner {
+        .lib-css(background-color, unset);
+    }
+
+    strong.product-item-name {
+        .lib-css(text-align, left);
+    }
+
+    // .minicart-items .product-item:not(:first-child) {
+    //     .lib-css(border-top, unset);
+    // }
+
+    div.title {
+        .lib-css(border-bottom, unset) !important;
+    }
+
+    .minicart-items .product-item {
+        .lib-css(padding, 0);
+    }
+
+    div#checkout-shipping-method-load {
+        .fontHelper(#333333, 15px, 700);
+    }
+
+    td.col.col-price {
+        span.price {
+            .fontHelper(#333333, 15px, 700)
+        }
+    }
+
+    div#checkout-shipping-method-load {
+        tbody:first-child {
+            .lib-css(border-color, black) !important;
+        }
+    }
+
+    .opc-block-summary {
+        .lib-css(background-color, #fff);
+        .lib-css(border, 1px solid #C9C9C9);
+        .lib-css(border-radius, 8px);
+
+        span.title {
+            .fontHelper(#333333, 24px, bold);
+        }
+
+        div.title strong {
+            .fontHelper(@theme__color__primary, 16px, bold);
+        }
+
+        strong.product-item-name {
+            .fontHelper(#000, 14px, 600);
+            .lib-css(font-family, 'Roboto-Light');
+        }
+
+        span.price {
+            .lib-css(font-family, 'Roboto-Bold');
+            .fontHelper(#000, 16px, 900);
+        }
+
+        th.mark {
+            .fontHelper(#333333, 16px, 700);
+        }
+
+        td.amount span.price {
+            .lib-css(font-family, "Nunito Sans");
+            .lib-css(font-weight, 400)
+        }
+
+        tr.grand.totals {
+            th.mark {
+                .fontHelper(#333333, 24px, 700);
+            }
+
+            td.amount {
+                span.price {
+                    .fontHelper(#333333, 24px, 700);
+                    .lib-css(font-family, "Nunito Sans");
+                }
+            }
+        }
+
+        .block.items-in-cart {
+            div.title strong {
+                .fontHelper(@theme__color__primary, 16px, 700);
+            }
+        }
+    }
+
+    .payment-method-title.field.choice span {
+        .fontHelper(#333333, 15px, 700);
+    }
+
+    .billing-address-details,
+    .billing-address-details a,
+    .billing-address-same-as-shipping-block.field.choice {
+        .fontHelper(#333333, 13px, 400);
+    }
+
+    button.action.primary.checkout {
+        .lib-css(border-radius, 8px);
+        .lib-css(text-transform, capitalize);
+
+        span {
+            .fontHelper(#fff, 24px, 700);
+        }
+    }
+
+    .checkout-payment-method .payment-method {
+        border-bottom: 1px solid #000000; // cor que você quiser
+    }
+
+    .shipping-information-title span {
+        .fontHelper(#333333, 24px, 700);
+    }
+
+    .shipping-information-content,
+    .shipping-information-content a {
+        .fontHelper(#333333, 16px, 700);
+    }
+
+    span#block-discount-heading {
+        .fontHelper(#838383, 14px, 700);
+    }
+
+    form#discount-form {
+        display: flex;
+    }
+
+    button.action.action-apply {
+        .lib-css(border, 1px solid #CECECE)
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+    button.action.action-show-popup {
+        .lib-css(width, 198px);
+    }
+
+    button.button.action.continue.primary {
+        .lib-css(width, 283px);
+        .fontHelper(#fff, 24px, bold);
+        .lib-css(text-transform, none);
+        .lib-css(border-radius, 8px);
+    }
+
+    li.product-item {
+        .lib-css(width, 100%) !important;
+        .lib-css(border, 1px solid #CECECE);
+        .lib-css(margin-bottom, 15px) !important;
+        .lib-css(padding, 22px) !important;
+    }
+
+    span.product-image-wrapper img {
+        .lib-css(height, 109px);
+    }
+
+    button.action.primary.checkout {
+        .lib-css(width, 283px);
+    }
+
+    .payment-option-inner {
+        .lib-css(width, 268px);
+
+        input#discount-code {
+            .lib-css(border, 1px solid #CECECE);
+        }
+    }
+
+    button.action.action-apply {
+        height: 32px;
+        .fontHelper(#fff, 13px, 500);
+    }
+
+}
+
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
+    .opc-estimated-wrapper {
+        .lib-css(background-color, @theme__color__primary);
+        .lib-css(color, #fff);
+    }
+
+    form#co-shipping-method-form {
+        .lib-css(background-color, #fff);
+        .lib-css(margin, 0);
+        .lib-css(border-bottom, unset);
+    }
+
+    button.button.action.continue.primary {
+        .lib-css(width, 342px);
+        .fontHelper(#fff, 20px, bold);
+        .lib-css(border-radius, 8px);
+    }
+
+    ul.opc-progress-bar {
+        .flex-center(row, nowrap);
+        .lib-css(margin-bottom, 42px);
+        .lib-css(margin-top, 72px);
+        .lib-css(align-items, flex-start);
+    }
+
+    li.opc-progress-bar-item,
+    li.opc-progress-bar-item._active {
+        .lib-css(width, 100%);
+    }
+
+    html:has(.opc-estimated-wrapper) {
+        .action.showcart:before {
+            .lib-visually-hidden();
+        }
+
+        .opc-estimated-wrapper {
+            .action.showcart {
+                &::after {
+                    content: 'Total de Itens';
+                    letter-spacing: 2px;
+                    font-family: 'Nunito Sans';
+                    color: white;
+                    text-transform: none;
+                    font-size: 16px;
+                    .lib-css(margin-right, 45px)
+                }
+            }
+        }
+
+        span.counter.qty {
+            .lib-css(margin-right, 25px) !important;
+            .lib-css(background-color, #EDEDED) !important;
+            .lib-css(width, 30px);
+            .lib-css(height, 35px) !important;
+        }
+
+        span.counter.qty::after {
+            .lib-css(content, "Total de Itens: ");
+        }
+
+        span.counter-number {
+            .fontHelper(@theme__color__primary, 16px, 400);
+            .lib-css(text-shadow, unset) !important;
+            .lib-css(display, block);
+            .lib-css(margin-top, 5px) !important;
+        }
+    }
+
+    .payment-option-inner {
+        .lib-css(width, 218px);
+    }
+
+    button.action.action-apply {
+        height: 32px;
+        .lib-css(width, 123px);
+        .fontHelper(#fff, 10px, 500);
+    }
+}

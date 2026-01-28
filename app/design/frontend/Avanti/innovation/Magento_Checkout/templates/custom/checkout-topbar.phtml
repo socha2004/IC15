@@ -11,20 +11,20 @@
     
     <div class="progress-wrapper">
         <div class="carrinho">
-            <div class="content-progress">
-                <span class="enabled-progress">1</span>
+            <div class="content-progress" >
+                <span class="number disabled-progress" id="step-carrinho">1</span>
                 <span>Carrinho</span>
             </div>
         </div>
         <div class="entrega">
-            <div class="content-progress">
-                <span class="disabled-progress">2</span>
+            <div class="content-progress" >
+                <span class="disabled-progress" id="step-entrega">2</span>
                 <span>Entrega</span>
             </div>
         </div>
         <div class="pagamento">
             <div class="content-progress">
-                <span class="disabled-progress">3</span>
+                <span class="disabled-progress" id="step-pagamento">3</span>
                 <span>Pagamento</span>
             </div>
         </div>
@@ -35,3 +35,16 @@
         <span>Compra 100% segura</span>
     </div>
 </div>
+
+<script type="text/x-magento-init">
+{
+    ".topbar-wrapper": {
+        "Magento_Checkout/js/header-progress": {
+            "step": "carrinho"
+        }
+    },
+     "*": {
+        "Magento_Checkout/js/slick-overshoot": {}
+    }
+}
+</script>

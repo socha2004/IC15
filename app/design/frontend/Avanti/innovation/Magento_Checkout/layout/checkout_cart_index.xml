@@ -18,5 +18,25 @@
 
         <!-- Remove links de conta -->
         <referenceBlock name="header.links" remove="true"/>
+
+        <referenceBlock name="footer.rows.wrapper" remove="true" />
+
+         <referenceContainer name="footer">
+            <container name="footer.rows.wrapper.checkout" label="Footer rows Wrapper" htmlTag="div" htmlClass="footer-rows-wrapper-checkout">
+                <container name="cms_container" label="CMS Block Container" htmlTag="div" htmlClass="cms-container">
+                    <block class="Magento\Cms\Block\Block" name="footer_row_checkout" before="-">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">footer_row_checkout</argument>
+                        </arguments>
+                    </block>
+                </container>
+            </container>
+
+            <!-- linha 2: bloco .phtml -->
+            <block class="Magento\Framework\View\Element\Template" name="flag.cards" template="Magento_Theme::html/flags-cards.phtml" />
+            <block class="Magento\Framework\View\Element\Template" name="stamps.partners" template="Magento_Theme::html/stamps-partners.phtml" after="footer.rows.wrapper.checkout" />
+        </referenceContainer>
+
+        <move element="flag.cards" destination="footer.rows.wrapper.checkout" after="cms_container"/>
     </body>
 </page>
