@@ -73,7 +73,16 @@
 "My billing and shipping address are the same", "Meu endereço de cobrança e entrega são os mesmos",
 "Place Order", "Finalizar Pedido",
 "Thank you for your purchase!", "Obrigado por sua compra!",
-"Your order number is:", "O número do seu pedido é:",
+"Your order number is: ", "O número do seu pedido é:",
 "We'll email you an order confirmation with details and tracking info.", "Enviaremos para você um e-mail de confirmação do seu pedido com detalhes e informações de rastreamento.",
 "Bank Transfer Payment", "Transferência Bancária",
-"Check / Money order", "Cheque / Pedido em dinheiro"
+"Check / Money order", "Cheque / Pedido em dinheiro",
+"Print receipt", "Imprimir recibo",
+"Continue Shopping", "Continuar Comprando",
+"My Account", "Minha Conta",
+"My Orders", "Meus Pedidos",
+"Address Book", "Catálogo de Endereço",
+"Account Information", "Informações de Conta",
+"Stored Payment Methods", "Métodos de Pagamento Armazenados",
+"Newsletter Subscriptions", "Assinaturas da Newsletter",
+"Recently Ordered", "Pedido Recente"
