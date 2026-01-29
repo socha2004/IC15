@@ -1,7 +1,14 @@
-.flex-center(@direction: row, @wrap: wrap) {
+.flex-center(@direction: row, @wrap: wrap, @justify: center) {
     .lib-css(display, flex);
-    .lib-css(justify-content, center);
+    .lib-css(justify-content, @justify);
     .lib-css(align-items, center);
     .lib-css(flex-direction, @direction);
     .lib-css(flex-wrap, @wrap);
+}
+
+.fontHelper(@color: #000, @size: 14px, @weight: bold) {
+    .lib-css(color, @color);
+    .lib-css(font-size, @size);
+    .lib-css(font-weight, @weight);
+    .lib-css(letter-spacing, normal);
 }

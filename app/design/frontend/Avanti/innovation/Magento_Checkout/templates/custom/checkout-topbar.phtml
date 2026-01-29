@@ -1,0 +1,50 @@
+<?php
+
+/** @var $block Magento\Framework\View\Element\Template */
+
+?>
+
+<div class="topbar-wrapper">
+    <a href="https://magento.innovation/">
+        <img src="<?php echo $block->getViewFileUrl('images/logo.svg'); ?>" alt="logo">
+    </a>
+    
+    <div class="progress-wrapper">
+        <div class="carrinho">
+            <div class="content-progress" >
+                <span class="number disabled-progress" id="step-carrinho">1</span>
+                <span>Carrinho</span>
+            </div>
+        </div>
+        <div class="entrega">
+            <div class="content-progress" >
+                <span class="disabled-progress" id="step-entrega">2</span>
+                <span>Entrega</span>
+            </div>
+        </div>
+        <div class="pagamento">
+            <div class="content-progress">
+                <span class="disabled-progress" id="step-pagamento">3</span>
+                <span>Pagamento</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="compra-segura">
+        <img src="<?php echo $block->getViewFileUrl('images/shield.png'); ?>" alt="compra segura">
+        <span>Compra 100% segura</span>
+    </div>
+</div>
+
+<script type="text/x-magento-init">
+{
+    ".topbar-wrapper": {
+        "Magento_Checkout/js/header-progress": {
+            "step": "carrinho"
+        }
+    },
+     "*": {
+        "Magento_Checkout/js/slick-overshoot": {}
+    }
+}
+</script>

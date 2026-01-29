@@ -1,0 +1,78 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+    html:has(.checkout-success) {
+        span.base {
+            .fontHelper(@theme__color__primary, 24px, 700);
+            .lib-css(text-align, center);
+        }
+
+        .page-title-wrapper {
+            .lib-css(text-align, center);
+            .flex-center(column-reverse);
+
+            a {
+                .lib-css(align-self, flex-end);
+            }
+        }
+
+        .column.main {
+            .lib-css(text-align, center);
+        }
+
+        .checkout-success .actions-toolbar {
+            .flex-center();
+        }
+    }
+
+    .checkout-success p:first-of-type {
+        .fontHelper(#303030, 16px, 500);
+    }
+
+    .checkout-success:not(p:first-of-type) {
+        .fontHelper(#303030, 14px, 400);
+    }
+
+    .checkout-success {
+        a.action.primary.continue { 
+            .lib-css(width, 195px);
+            .lib-css(border-radius, 5px);
+            .fontHelper(#fff, 12px, 700);
+        }
+
+        .order-number {
+            .fontHelper(#303030, 16px, 500);
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+    html:has(.checkout-success) {
+        .page-title-wrapper {
+            a {
+                .lib-css(align-self, flex-end);
+                .fontHelper(#000, 16px, 700);
+                .lib-css(text-decoration, underline);
+            }
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
+    html:has(.checkout-success) {
+        .page-title-wrapper {
+            a {
+                .lib-css(align-self, center);
+                .lib-css(display, block);
+                .fontHelper(#000, 14px, 700);
+            }
+        }
+    }
+}
