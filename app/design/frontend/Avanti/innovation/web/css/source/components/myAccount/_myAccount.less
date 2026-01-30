@@ -9,6 +9,16 @@
             .lib-css(color, #fff);
         }
 
+        div.block.block-dashboard-addresses .block-title,
+        div.block.block-dashboard-orders .block-title.order {
+            .flex-center(column, wrap, center, left);
+            .lib-css(padding-bottom, 5px);
+
+            a.action.edit {
+                .lib-css(margin-left, 0) !important;
+            }
+        }
+
         .data.table.table-order-items.recent {
 
             td.col.id::before,
@@ -28,6 +38,9 @@
             }
         }
     }
+
+    // .table-wrapper.orders-history,
+    
 }
 
 //
@@ -35,7 +48,7 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
-     html:has(.block-dashboard-addresses) { 
+    html:has(.block-dashboard-addresses) {
         div.column.main {
             .lib-css(border, 1px solid #ccc);
             .lib-css(padding, 25px);
@@ -45,7 +58,8 @@
         main#maincontent {
             .lib-css(margin-top, 45px);
         }
-     }
+    }
+
     .block.block-dashboard-info .block-content {
         .lib-css(display, flex);
         .lib-css(flex-direction, column);
@@ -64,10 +78,10 @@
 
         tbody,
         tbody span.price {
-            .fontHelper(#656565, 14px, 700); 
+            .fontHelper(#656565, 14px, 700);
         }
 
-        tbody > tr > td {
+        tbody>tr>td {
             .lib-css(padding, 15px 0);
         }
     }
@@ -77,7 +91,7 @@
 //  Common
 //  _____________________________________________
 & when (@media-common =true) {
-    html:has(.block-dashboard-addresses) {
+    html:has(body.account) {
         h1.page-title {
             .fontHelper(#000, 24px, 700);
         }
