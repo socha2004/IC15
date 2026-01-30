@@ -1,0 +1,116 @@
+//
+// Mobile
+// _____________________________________________
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
+    html:has(.block-dashboard-addresses) {
+
+        .title.block-collapsible-nav-title {
+            .lib-css(background-color, @theme__color__primary);
+            .lib-css(color, #fff);
+        }
+
+        .data.table.table-order-items.recent {
+
+            td.col.id::before,
+            td.col.date::before,
+            td.col.shipping::before,
+            td.col.total::before,
+            td.col.status::before {
+                .fontHelper(#707070, 14px, 700);
+            }
+
+            td.col.id,
+            td.col.date,
+            td.col.shipping,
+            td.col.total span.price,
+            td.col.status {
+                .fontHelper(#707070, 14px, 400);
+            }
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+     html:has(.block-dashboard-addresses) { 
+        div.column.main {
+            .lib-css(border, 1px solid #ccc);
+            .lib-css(padding, 25px);
+            .lib-css(border-radius, 5px);
+        }
+
+        main#maincontent {
+            .lib-css(margin-top, 45px);
+        }
+     }
+    .block.block-dashboard-info .block-content {
+        .lib-css(display, flex);
+        .lib-css(flex-direction, column);
+
+        div.box.box-information {
+            .lib-css(margin, 30px 0);
+        }
+    }
+
+    .data.table.table-order-items.recent {
+        .lib-css(margin-top, 45px);
+
+        thead th {
+            .fontHelper(#707070, 14px, 700);
+        }
+
+        tbody,
+        tbody span.price {
+            .fontHelper(#656565, 14px, 700); 
+        }
+
+        tbody > tr > td {
+            .lib-css(padding, 15px 0);
+        }
+    }
+}
+
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+    html:has(.block-dashboard-addresses) {
+        h1.page-title {
+            .fontHelper(#000, 24px, 700);
+        }
+
+        .block.block-dashboard-addresses .block-title,
+        .block.block-dashboard-info .block-title,
+        .block.block-dashboard-orders .block-title.order {
+            .lib-css(border-bottom, 1px solid #B6B6B6);
+            .lib-css(margin-bottom, 20px);
+            .lib-css(padding-bottom, 30px);
+
+            strong {
+                .fontHelper(#707070, 18px, 700);
+            }
+        }
+
+        .box.box-billing-address strong.box-title,
+        .box.box-information strong.box-title,
+        .box.box-newsletter strong.box-title,
+        .box.box-shipping-address strong.box-title {
+            .fontHelper(#707070, 14px, 700);
+        }
+
+        .box.box-newsletter,
+        .box.box-information {
+            p {
+                .fontHelper(#656565, 14px, 400);
+            }
+        }
+
+        .box-content address,
+        .box-content a {
+            .fontHelper(#333333, 13px, 400);
+        }
+    }
+}
