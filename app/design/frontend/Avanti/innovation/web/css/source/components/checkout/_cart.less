@@ -10,13 +10,23 @@
         .slick-track {
             .lib-css(width, 100%)!important;
 
-            .slick-slide.slick-active {
-                .lib-css(width, 100%)!important;
-            }
+            // .slick-slide.slick-active {
+            //     .lib-css(width, 100%)!important;
+            // }
         }
 
         .slick-list {
             .lib-css(width, 100%)!important;
+        }
+
+        .products.wrapper.grid.products-crosssell {
+            ol.products.list.items.product-items.slick-initialized.slick-slider {
+                .lib-css(display, block);
+            }
+
+            .column.main .product-item {
+                .lib-css(width, fit-content) !important;
+            }
         }
     }
 
